@@ -27,7 +27,8 @@ public class SecurityConfig {
                     "/swagger-ui.html",
                     "/login",
                     "/auth",
-                    "/logout"
+                    "/logoutUser",
+                    "/register"
                 ).permitAll()// Allow public access to /login
                 // .requestMatchers("/auth", "/logout").authenticated()
                 .anyRequest().authenticated()          // Secure all other endpoints

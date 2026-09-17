@@ -16,6 +16,12 @@ public class JwtService {
 
     private final SecretKey secretKey;
 
+    // 15 minutes for access token
+    private static final long ACCESS_TOKEN_EXPIRATION = 1000 * 60 * 15;
+
+    // 7 days for refresh token
+    private static final long REFRESH_TOKEN_EXPIRATION = 1000L * 60 * 60 * 24 * 7;
+
     public JwtService(){
         this.secretKey = Jwts.SIG.HS256.key().build();
     }
@@ -23,7 +29,7 @@ public class JwtService {
     public String generateToken(User user){
         return Jwts.builder()
                 .subject(user.getEmail())
-                .claim("userId",user.getUserId())
+                .claim("roles",user.getRoles())
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis()+ 1000*60*15))
                 .signWith(secretKey)

@@ -4,7 +4,9 @@ import com.hdfc.model.LoginRequest;
 import com.hdfc.model.User;
 import com.hdfc.services.JwtService;
 import com.hdfc.services.UserService;
+import com.hdfc.utility.ApiResponse;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.HashMap;
@@ -25,6 +27,7 @@ public class AuthController {
 
     private final JwtService jwtService;
     private final UserService userService;
+    
 
     AuthController(JwtService jwtService, UserService userService){
         this.jwtService = jwtService;
@@ -32,7 +35,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequest request) {
+    public ResponseEntity<ApiResponse<Map<String, String>>> login(@RequestBody LoginRequest request) {
         System.out.println("entered func");
         User user = userService.findByEmail(request.getEmail());
 
@@ -42,12 +45,21 @@ public class AuthController {
 
             Map<String, String> body = new HashMap<>();
             body.put("token", token);
-            return ResponseEntity.ok(body);
+            ApiResponse<Map<String, String>> response = ApiResponse.success(HttpStatus.OK.value(),"Login Successful",body);
+            return ResponseEntity.ok(response);
         }
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+        ApiResponse<Map<String, String>> response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(),"Login Failed");
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
     }
-
+    
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody User user) {
+        userService.save(user);
+        return ResponseEntity.ok("User registered successfully");
+    }
+    
     @GetMapping("/auth")
+    @SecurityRequirement(name = "bearerAuth")
     public ResponseEntity<?> validateAuth(@RequestHeader("Authorization") String authHeader) {
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Missing token");
@@ -62,8 +74,9 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid or expired session");
     }
 
-        @PostMapping("/logout")
-    public ResponseEntity<?> logout(@RequestHeader(value = "Authorization", required = false) String authHeader) {
+    @PostMapping("/logoutUser")
+    @SecurityRequirement(name = "bearerAuth")
+    public ResponseEntity<?> logout(@RequestHeader(value = "Authorization") String authHeader) {
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             String token = authHeader.substring(7);
             userService.invalidateToken(token);
