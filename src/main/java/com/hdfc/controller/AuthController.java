@@ -60,18 +60,21 @@ public class AuthController {
     
     @GetMapping("/auth")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<?> validateAuth(@RequestHeader("Authorization") String authHeader) {
+    public ResponseEntity<ApiResponse<String>> validateAuth(@RequestHeader("Authorization") String authHeader) {
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Missing token");
+            ApiResponse response = ApiResponse.error(HttpStatus.BAD_REQUEST.value(),"Missing token");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
         }
 
         String token = authHeader.substring(7);
         if (userService.isTokenActive(token) && jwtService.isValid(token)) {
             String email = jwtService.getSubject(token);
-            return ResponseEntity.ok(userService.findByEmail(email));
+            ApiResponse response = ApiResponse.success(HttpStatus.OK.value(), "Token is Valid",email);
+            return ResponseEntity.status(HttpStatus.OK).body(response);
         }
 
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid or expired session");
+        ApiResponse response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(),"User Not Authorised");
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
     }
 
     @PostMapping("/logoutUser")
