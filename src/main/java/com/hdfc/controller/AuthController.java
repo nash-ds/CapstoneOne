@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.hdfc.services.ResilientLoginService;
 
 
 @RestController
@@ -27,11 +28,13 @@ public class AuthController {
 
     private final JwtService jwtService;
     private final UserService userService;
-    
+    private final ResilientLoginService resilientLoginService;
 
-    AuthController(JwtService jwtService, UserService userService){
+
+    AuthController(JwtService jwtService, UserService userService,ResilientLoginService resilientLoginService){
         this.jwtService = jwtService;
         this.userService = userService;
+        this.resilientLoginService = resilientLoginService;
     }
 
     @PostMapping("/login")
@@ -53,7 +56,7 @@ public class AuthController {
         ApiResponse<Map<String, String>> response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(),"Login Failed");
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
     }
-    
+
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
         //TODO: Error handling
@@ -68,7 +71,7 @@ public class AuthController {
         ApiResponse<Map<String, String>> response = ApiResponse.success(HttpStatus.OK.value(),"Registration Successful",body);
         return ResponseEntity.ok(response);
     }
-    
+
     @GetMapping("/auth")
     @SecurityRequirement(name = "bearerAuth")
     public ResponseEntity<ApiResponse<String>> validateAuth(@RequestHeader("Authorization") String authHeader) {
