@@ -47,6 +47,10 @@ public class UserService {
     public void registerToken(String token) { userRepository.registerToken(token); }
     public void invalidateToken(String token) { userRepository.invalidateToken(token); }
     public boolean isTokenActive(String token) { return userRepository.isTokenActive(token); }
+    public void registerRefreshToken(String token) { userRepository.registerRefreshToken(token); }
+    public void invalidateRefreshToken(String token) { userRepository.invalidateRefreshToken(token); }
+    public boolean isRefreshTokenActive(String token) { return userRepository.isRefreshTokenActive(token); }
+
 
 
 }

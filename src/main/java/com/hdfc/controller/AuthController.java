@@ -7,10 +7,8 @@ import com.hdfc.services.UserService;
 import com.hdfc.utility.ApiResponse;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.http.HttpStatus;
@@ -42,9 +40,11 @@ public class AuthController {
         if (user != null && user.getPassword().equals(request.getPassword())) {
             String token = jwtService.generateToken(user);
             userService.registerToken(token);
-
+            String refreshToken = jwtService.generateRefreshToken(user);
+            userService.registerRefreshToken(refreshToken);
             Map<String, String> body = new HashMap<>();
             body.put("token", token);
+            body.put("refreshToken",refreshToken);
             ApiResponse<Map<String, String>> response = ApiResponse.success(HttpStatus.OK.value(),"Login Successful",body);
             return ResponseEntity.ok(response);
         }
@@ -54,8 +54,17 @@ public class AuthController {
     
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
+        //TODO: Error handling
         userService.save(user);
-        return ResponseEntity.ok("User registered successfully");
+        String token = jwtService.generateToken(user);
+        userService.registerToken(token);
+        String refreshToken = jwtService.generateRefreshToken(user);
+        userService.registerRefreshToken(refreshToken);
+        Map<String, String> body = new HashMap<>();
+        body.put("token", token);
+        body.put("refreshToken",refreshToken);
+        ApiResponse<Map<String, String>> response = ApiResponse.success(HttpStatus.OK.value(),"Registration Successful",body);
+        return ResponseEntity.ok(response);
     }
     
     @GetMapping("/auth")
@@ -68,13 +77,45 @@ public class AuthController {
 
         String token = authHeader.substring(7);
         if (userService.isTokenActive(token) && jwtService.isValid(token)) {
-            String email = jwtService.getSubject(token);
-            ApiResponse response = ApiResponse.success(HttpStatus.OK.value(), "Token is Valid",email);
+//            String email = jwtService.getSubject(token);
+            ApiResponse response = ApiResponse.success(HttpStatus.OK.value(), jwtService.isValidDetailed(token), true);
             return ResponseEntity.status(HttpStatus.OK).body(response);
         }
 
-        ApiResponse response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(),"User Not Authorised");
+        ApiResponse response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(), jwtService.isValidDetailed(token));
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+    }
+
+    @GetMapping("/refresh")
+    @SecurityRequirement(name = "bearerAuth")
+    public ResponseEntity<ApiResponse<Map<String,String>>> refreshToken(@RequestHeader("Authorization") String authHeader) {
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            ApiResponse response = ApiResponse.error(HttpStatus.BAD_REQUEST.value(),"Missing token");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        }
+
+        String refreshToken = authHeader.substring(7);
+
+        if (refreshToken != null && jwtService.isValid(refreshToken) && userService.isRefreshTokenActive(refreshToken)) {
+
+            String email = jwtService.getSubject(refreshToken);
+            User user = userService.findByEmail(email);
+
+            if (user != null) {
+                // 2. Generate a new Access Token (and optionally rotate the refresh token)
+                String newAccessToken = jwtService.generateToken(user);
+                Map<String, String> body = new HashMap<>();
+                body.put("token", newAccessToken);
+                userService.registerToken(newAccessToken);
+                body.put("refreshToken",refreshToken);
+                ApiResponse authResponse = ApiResponse.success(HttpStatus.CREATED.value(), "Token refreshed successfully",body);
+                return ResponseEntity.status(HttpStatus.CREATED).body(authResponse);
+            }
+        }
+
+        return ResponseEntity
+                .status(HttpStatus.UNAUTHORIZED)
+                .body(ApiResponse.error(HttpStatus.UNAUTHORIZED.value(), "Invalid or expired refresh token"));
     }
 
     @PostMapping("/logoutUser")

@@ -13,6 +13,7 @@ import com.hdfc.model.User;
 public class UserRepository {
 
     private final Set<String> activeTokens = ConcurrentHashMap.newKeySet();
+    private final Set<String> refreshTokens = ConcurrentHashMap.newKeySet();
     private List<User> users = new ArrayList<>();
 
     public User findByEmail(String email) {
@@ -53,6 +54,12 @@ public class UserRepository {
     public void deleteById(int id){
         users.remove(id);
     }
+
+    public void registerRefreshToken(String refreshToken) { refreshTokens.add(refreshToken); }
+
+    public void invalidateRefreshToken(String refreshToken) { refreshTokens.remove(refreshToken); }
+
+    public boolean isRefreshTokenActive(String refreshToken) { return refreshTokens.contains(refreshToken); }
 
     public void patch(int id, User user){
         User u = users.get(id);

@@ -1,9 +1,11 @@
 package com.hdfc.services;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.crypto.SecretKey;
 
+import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.stereotype.Service;
 
 import com.hdfc.model.User;
@@ -31,7 +33,17 @@ public class JwtService {
                 .subject(user.getEmail())
                 .claim("roles",user.getRoles())
                 .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis()+ 1000*60*15))
+                .expiration(new Date(System.currentTimeMillis()+ 1000*30))
+                .signWith(secretKey)
+                .compact();
+    }
+
+    public String generateRefreshToken(User user){
+        return Jwts.builder()
+                .subject(user.getEmail())
+                .claim("tokenType", "REFRESH")
+                .issuedAt(new Date())
+                .expiration(new Date(System.currentTimeMillis() + REFRESH_TOKEN_EXPIRATION))
                 .signWith(secretKey)
                 .compact();
     }
@@ -43,6 +55,22 @@ public class JwtService {
                 .parseSignedClaims(token)
                 .getPayload()
                 .getSubject();
+    }
+
+    public String isValidDetailed(String token) {
+        try {
+            Jwts.parser()
+                    .verifyWith(secretKey)
+                    .build()
+                    .parseSignedClaims(token);
+            return "VALID";
+        } catch (ExpiredJwtException e) {
+            // Token was validly signed, but has passed its expiration time
+            return "EXPIRED";
+        } catch (JwtException | IllegalArgumentException e) {
+            // Malformed token, invalid signature, empty, or untrusted payload
+            return "INVALID";
+        }
     }
 
     public boolean isValid(String token){
