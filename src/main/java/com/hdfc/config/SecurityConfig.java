@@ -25,13 +25,7 @@ public class SecurityConfig {
                     "/v3/api-docs/**",
                     "/swagger-ui/**",
                     "/swagger-ui.html",
-                    "/login",
-                    "/auth",
-                    "/logoutUser",
-                    "/register",
-                    "/refresh",
-                    "/user",
-                    "/admin"
+                    "/api/**"
                 ).permitAll()// Allow public access to /login
                 // .requestMatchers("/auth", "/logout").authenticated()
                 .anyRequest().authenticated()          // Secure all other endpoints

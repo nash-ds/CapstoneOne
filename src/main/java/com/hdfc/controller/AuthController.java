@@ -14,17 +14,13 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import com.hdfc.services.ResilientLoginService;
 
 
 @RestController
+@RequestMapping("/api")
 public class AuthController {
 
     private final JwtService jwtService;
@@ -95,7 +91,7 @@ public class AuthController {
 
     @GetMapping("/refresh")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<?> refreshToken(@RequestHeader("Refresh-Token") String authHeader) {
+    public ResponseEntity<?> refreshToken(@RequestHeader("Authorization") String authHeader) {
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             ApiResponse response = ApiResponse.error(HttpStatus.BAD_REQUEST.value(),"Missing token");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
@@ -123,7 +119,7 @@ public class AuthController {
                 .body(ApiResponse.error(HttpStatus.UNAUTHORIZED.value(), "Invalid or expired refresh token"));
     }
 
-    @PostMapping("/logoutUser")
+    @PostMapping("/logout")
     @SecurityRequirement(name = "bearerAuth")
     public ResponseEntity<?> logout(@RequestHeader(value = "Authorization") String accessHeader) {
         if (accessHeader != null && accessHeader.startsWith("Bearer ")) {
@@ -136,14 +132,16 @@ public class AuthController {
 
     @GetMapping("/user")
     @SecurityRequirement(name = "bearerAuth")
-    public User getUser(@RequestHeader(value = "Authorization") String authHeader) {
+    public ResponseEntity<?> getUser(@RequestHeader(value = "Authorization") String authHeader) {
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             String token = authHeader.substring(7);
             String email = jwtService.getSubject(token);
-            User user = userService.findByEmail(email);
-            return user;    
+            if (jwtService.isValid(token) && userService.isTokenActive(email,token)){
+                User user = userService.findByEmail(email);
+                return ResponseEntity.ok(user);
+            }
         }
-        return null;
+        return ResponseEntity.notFound().build();
     }
 
     @GetMapping("/admin")
