@@ -9,6 +9,7 @@ import com.hdfc.utility.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.http.HttpStatus;
@@ -38,15 +39,15 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<ApiResponse<Map<String, String>>> login(@RequestBody LoginRequest request) {
+    public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         System.out.println("entered func");
         User user = userService.findByEmail(request.getEmail());
 
         if (user != null && user.getPassword().equals(request.getPassword())) {
             String token = jwtService.generateToken(user);
-            userService.registerToken(token);
+            userService.registerToken(user.getEmail(), token);
             String refreshToken = jwtService.generateRefreshToken(user);
-            userService.registerRefreshToken(refreshToken);
+            userService.registerRefreshToken(user.getEmail(), refreshToken);
             Map<String, String> body = new HashMap<>();
             body.put("token", token);
             body.put("refreshToken",refreshToken);
@@ -58,13 +59,13 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody User user) {
+    public ResponseEntity<?> register(@RequestBody LoginRequest loginRequest) {
         //TODO: Error handling
-        userService.save(user);
+        User user = userService.registerUser(loginRequest);
         String token = jwtService.generateToken(user);
-        userService.registerToken(token);
+        userService.registerToken(user.getEmail(), token);
         String refreshToken = jwtService.generateRefreshToken(user);
-        userService.registerRefreshToken(refreshToken);
+        userService.registerRefreshToken(user.getEmail(), refreshToken);
         Map<String, String> body = new HashMap<>();
         body.put("token", token);
         body.put("refreshToken",refreshToken);
@@ -74,14 +75,15 @@ public class AuthController {
 
     @GetMapping("/auth")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<ApiResponse<String>> validateAuth(@RequestHeader("Authorization") String authHeader) {
+    public ResponseEntity<?> validateAuth(@RequestHeader("Authorization") String authHeader) {
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             ApiResponse response = ApiResponse.error(HttpStatus.BAD_REQUEST.value(),"Missing token");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
         }
 
         String token = authHeader.substring(7);
-        if (userService.isTokenActive(token) && jwtService.isValid(token)) {
+        String email = jwtService.getSubject(token);
+        if (userService.isTokenActive(email , token) && jwtService.isValid(token)) {
 //            String email = jwtService.getSubject(token);
             ApiResponse response = ApiResponse.success(HttpStatus.OK.value(), jwtService.isValidDetailed(token), true);
             return ResponseEntity.status(HttpStatus.OK).body(response);
@@ -93,26 +95,24 @@ public class AuthController {
 
     @GetMapping("/refresh")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<ApiResponse<Map<String,String>>> refreshToken(@RequestHeader("Authorization") String authHeader) {
+    public ResponseEntity<?> refreshToken(@RequestHeader("Refresh-Token") String authHeader) {
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             ApiResponse response = ApiResponse.error(HttpStatus.BAD_REQUEST.value(),"Missing token");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
         }
 
         String refreshToken = authHeader.substring(7);
+        String email = jwtService.getSubject(refreshToken);
 
-        if (refreshToken != null && jwtService.isValid(refreshToken) && userService.isRefreshTokenActive(refreshToken)) {
+        if (jwtService.isValid(refreshToken) && userService.isRefreshTokenActive(email,refreshToken)) {
 
-            String email = jwtService.getSubject(refreshToken);
             User user = userService.findByEmail(email);
 
             if (user != null) {
-                // 2. Generate a new Access Token (and optionally rotate the refresh token)
                 String newAccessToken = jwtService.generateToken(user);
                 Map<String, String> body = new HashMap<>();
                 body.put("token", newAccessToken);
-                userService.registerToken(newAccessToken);
-                body.put("refreshToken",refreshToken);
+                userService.registerToken(user.getEmail(),newAccessToken);
                 ApiResponse authResponse = ApiResponse.success(HttpStatus.CREATED.value(), "Token refreshed successfully",body);
                 return ResponseEntity.status(HttpStatus.CREATED).body(authResponse);
             }
@@ -125,12 +125,13 @@ public class AuthController {
 
     @PostMapping("/logoutUser")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<?> logout(@RequestHeader(value = "Authorization") String authHeader) {
-        if (authHeader != null && authHeader.startsWith("Bearer ")) {
-            String token = authHeader.substring(7);
-            userService.invalidateToken(token);
+    public ResponseEntity<?> logout(@RequestHeader(value = "Authorization") String accessHeader) {
+        if (accessHeader != null && accessHeader.startsWith("Bearer ")) {
+            String token = accessHeader.substring(7);
+            userService.logout(token);
+            return ResponseEntity.ok("Logged out successfully");
         }
-        return ResponseEntity.ok("Logged out successfully");
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Logout Failed");
     }
 
     @GetMapping("/user")
@@ -144,5 +145,25 @@ public class AuthController {
         }
         return null;
     }
+
+    @GetMapping("/admin")
+    @SecurityRequirement (name = "bearerAuth")
+    public ResponseEntity<?> getAllUsers(@RequestHeader (value = "Authorization") String authHeader) {
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            ApiResponse response = ApiResponse.error(HttpStatus.BAD_REQUEST.value(),"Missing token");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        }
+        String token = authHeader.substring(7);
+        String email = jwtService.getSubject(token);
+        User user = userService.findByEmail(email);
+        if (!userService.isAdmin(user)) {
+            ApiResponse response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(),"Not authorized to view all users");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+        }
+        List<User> users = userService.getAllUsers();
+        ApiResponse response = ApiResponse.success(HttpStatus.OK.value(),"Users fetched successfully",users);
+        return ResponseEntity.ok(response);
+    }
+    
     
 }
