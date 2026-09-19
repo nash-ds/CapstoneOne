@@ -2,3 +2,13 @@ spring:
   application:
     name: CapstoneOne
     
+  datasource:
+    url : jdbc:postgresql://localhost:5432/flywaydb
+    username : NASHD
+    password : password
+
+
+
+  jpa:
+    hibernate:
+      ddl-auto : update

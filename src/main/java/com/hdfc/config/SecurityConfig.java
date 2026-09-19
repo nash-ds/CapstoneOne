@@ -30,7 +30,8 @@ public class SecurityConfig {
                     "/logoutUser",
                     "/register",
                     "/refresh",
-                        "/user"
+                    "/user",
+                    "/admin"
                 ).permitAll()// Allow public access to /login
                 // .requestMatchers("/auth", "/logout").authenticated()
                 .anyRequest().authenticated()          // Secure all other endpoints
