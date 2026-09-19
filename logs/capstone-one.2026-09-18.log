@@ -1,0 +1,2187 @@
+2026-09-18 13:49:19
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Starting CapstoneOneApplication using Java 25.0.4 with PID 97278 (/Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne/target/classes started by PRASAD_S in /Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne)
+2026-09-18 13:49:19
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-09-18 13:49:19
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-18 13:49:19
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-18 13:49:19
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-18 13:49:19
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-09-18 13:49:19
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-18 13:49:19
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-09-18 13:49:19
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-18 13:49:19
+                [restartedMain]
+                INFO 
+                o.s.b.w.c.s.WebApplicationContextInitializer
+                - Root WebApplicationContext: initialization completed in 477 ms
+2026-09-18 13:49:20
+                [restartedMain]
+                WARN 
+                o.s.b.s.a.UserDetailsServiceAutoConfiguration
+                - 
+
+Using generated security password: b90e3372-5108-4044-be69-9c6f9ffac390
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-18 13:49:20
+                [restartedMain]
+                INFO 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-18 13:49:20
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-18 13:49:20
+                [restartedMain]
+                WARN 
+                o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext
+                - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-09-18 13:49:20
+                [restartedMain]
+                INFO 
+                o.s.b.a.l.ConditionEvaluationReportLogger
+                - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-18 13:49:20
+                [restartedMain]
+                ERROR
+                o.s.b.d.LoggingFailureAnalysisReporter
+                - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-09-18 13:52:12
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Starting CapstoneOneApplication using Java 25.0.4 with PID 97577 (/Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne/target/classes started by PRASAD_S in /Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne)
+2026-09-18 13:52:12
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-09-18 13:52:12
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-18 13:52:12
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-18 13:52:12
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-18 13:52:13
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-09-18 13:52:13
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-18 13:52:13
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-09-18 13:52:13
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-18 13:52:13
+                [restartedMain]
+                INFO 
+                o.s.b.w.c.s.WebApplicationContextInitializer
+                - Root WebApplicationContext: initialization completed in 466 ms
+2026-09-18 13:52:13
+                [restartedMain]
+                WARN 
+                o.s.b.s.a.UserDetailsServiceAutoConfiguration
+                - 
+
+Using generated security password: e8df3c6d-7cc7-404b-ae0b-5bcd0f4a1882
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-18 13:52:13
+                [restartedMain]
+                INFO 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-18 13:52:13
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-18 13:52:13
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-09-18 13:52:13
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Started CapstoneOneApplication in 0.982 seconds (process running for 1.149)
+2026-09-18 13:52:13
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-18 13:52:13
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-18 14:29:00
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-18 14:29:00
+                [tomcat-shutdown]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Graceful shutdown complete
+2026-09-18 14:29:02
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Starting CapstoneOneApplication using Java 25.0.4 with PID 99552 (/Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne/target/classes started by PRASAD_S in /Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne)
+2026-09-18 14:29:02
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-09-18 14:29:02
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-18 14:29:02
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-18 14:29:02
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-18 14:29:02
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-09-18 14:29:02
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-18 14:29:02
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-09-18 14:29:02
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-18 14:29:02
+                [restartedMain]
+                INFO 
+                o.s.b.w.c.s.WebApplicationContextInitializer
+                - Root WebApplicationContext: initialization completed in 481 ms
+2026-09-18 14:29:02
+                [restartedMain]
+                WARN 
+                o.s.b.s.a.UserDetailsServiceAutoConfiguration
+                - 
+
+Using generated security password: eaed0fcb-45a6-4849-9fe7-02602796a6c8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-18 14:29:02
+                [restartedMain]
+                INFO 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-18 14:29:02
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-18 14:29:02
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-09-18 14:29:02
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Started CapstoneOneApplication in 0.995 seconds (process running for 1.181)
+2026-09-18 14:29:02
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-18 14:29:02
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-18 15:42:35
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-18 15:42:35
+                [tomcat-shutdown]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Graceful shutdown complete
+2026-09-18 15:42:36
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Starting CapstoneOneApplication using Java 25.0.4 with PID 1921 (/Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne/target/classes started by PRASAD_S in /Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne)
+2026-09-18 15:42:36
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-09-18 15:42:36
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-18 15:42:36
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-18 15:42:36
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-18 15:42:36
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-09-18 15:42:36
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-18 15:42:36
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-09-18 15:42:36
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-18 15:42:36
+                [restartedMain]
+                INFO 
+                o.s.b.w.c.s.WebApplicationContextInitializer
+                - Root WebApplicationContext: initialization completed in 476 ms
+2026-09-18 15:42:37
+                [restartedMain]
+                WARN 
+                o.s.b.s.a.UserDetailsServiceAutoConfiguration
+                - 
+
+Using generated security password: 37895d2b-ac15-48f5-9c26-3346a360d407
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-18 15:42:37
+                [restartedMain]
+                INFO 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-18 15:42:37
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-18 15:42:37
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-09-18 15:42:37
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Started CapstoneOneApplication in 0.994 seconds (process running for 1.176)
+2026-09-18 15:42:37
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-18 15:42:37
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-18 17:03:07
+                [http-nio-8080-exec-1]
+                INFO 
+                o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-18 17:03:07
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'
+2026-09-18 17:03:07
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 2 ms
+2026-09-18 17:03:07
+                [http-nio-8080-exec-3]
+                INFO 
+                o.s.api.AbstractOpenApiResource
+                - Init duration for springdoc-openapi is: 108 ms
+2026-09-18 17:36:46
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-18 17:36:46
+                [tomcat-shutdown]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Graceful shutdown complete
+2026-09-18 17:36:48
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Starting CapstoneOneApplication using Java 25.0.4 with PID 6504 (/Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne/target/classes started by PRASAD_S in /Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne)
+2026-09-18 17:36:48
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-09-18 17:36:48
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-18 17:36:48
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-18 17:36:48
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-18 17:36:48
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-09-18 17:36:48
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-18 17:36:48
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-09-18 17:36:48
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-18 17:36:48
+                [restartedMain]
+                INFO 
+                o.s.b.w.c.s.WebApplicationContextInitializer
+                - Root WebApplicationContext: initialization completed in 459 ms
+2026-09-18 17:36:48
+                [restartedMain]
+                WARN 
+                o.s.b.s.a.UserDetailsServiceAutoConfiguration
+                - 
+
+Using generated security password: 6e6659e8-31a9-4c34-a8ad-a475c24fa20a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-18 17:36:48
+                [restartedMain]
+                INFO 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-18 17:36:49
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-18 17:36:49
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-09-18 17:36:49
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Started CapstoneOneApplication in 0.966 seconds (process running for 1.148)
+2026-09-18 17:36:49
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-18 17:36:49
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-18 20:52:03
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-18 20:52:03
+                [tomcat-shutdown]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Graceful shutdown complete
+2026-09-18 20:56:05
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Starting CapstoneOneApplication using Java 25.0.4 with PID 9203 (/Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne/target/classes started by PRASAD_S in /Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne)
+2026-09-18 20:56:05
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-09-18 20:56:05
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-18 20:56:05
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-18 20:56:06
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-18 20:56:06
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-09-18 20:56:06
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-18 20:56:06
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-09-18 20:56:06
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-18 20:56:06
+                [restartedMain]
+                INFO 
+                o.s.b.w.c.s.WebApplicationContextInitializer
+                - Root WebApplicationContext: initialization completed in 356 ms
+2026-09-18 20:56:06
+                [restartedMain]
+                WARN 
+                o.s.b.s.a.UserDetailsServiceAutoConfiguration
+                - 
+
+Using generated security password: c21fce1a-ede3-42ee-9b7a-46eb2e95cc25
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-18 20:56:06
+                [restartedMain]
+                INFO 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-18 20:56:06
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-18 20:56:06
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-09-18 20:56:06
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Started CapstoneOneApplication in 0.78 seconds (process running for 0.939)
+2026-09-18 20:56:06
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-18 20:56:06
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-18 20:57:25
+                [http-nio-8080-exec-1]
+                INFO 
+                o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-18 20:57:25
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'
+2026-09-18 20:57:25
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 2 ms
+2026-09-18 20:57:25
+                [http-nio-8080-exec-1]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 20:57:25
+                [http-nio-8080-exec-1]
+                ERROR
+                c.h.exception.GlobalExceptionHandler
+                - Unexpected application error
+com.hdfc.exception.InvalidCredentialsException: Incorrect password
+	at com.hdfc.controller.AuthController.login(AuthController.java:75)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$2(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:376)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-09-18 20:57:26
+                [http-nio-8080-exec-1]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.InvalidCredentialsException: Incorrect password]
+2026-09-18 20:57:40
+                [http-nio-8080-exec-2]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 20:57:40
+                [http-nio-8080-exec-2]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful for email: user@company.com
+2026-09-18 20:59:08
+                [http-nio-8080-exec-4]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 20:59:08
+                [http-nio-8080-exec-4]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful for email: user@company.com
+2026-09-18 20:59:43
+                [http-nio-8080-exec-5]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 20:59:43
+                [http-nio-8080-exec-5]
+                ERROR
+                c.h.exception.GlobalExceptionHandler
+                - Unexpected application error
+com.hdfc.exception.InvalidCredentialsException: Incorrect password
+	at com.hdfc.controller.AuthController.login(AuthController.java:75)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$2(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:376)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-09-18 20:59:43
+                [http-nio-8080-exec-5]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.InvalidCredentialsException: Incorrect password]
+2026-09-18 20:59:44
+                [http-nio-8080-exec-6]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 20:59:44
+                [http-nio-8080-exec-6]
+                ERROR
+                c.h.exception.GlobalExceptionHandler
+                - Unexpected application error
+com.hdfc.exception.InvalidCredentialsException: Incorrect password
+	at com.hdfc.controller.AuthController.login(AuthController.java:75)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$2(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:376)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-09-18 20:59:44
+                [http-nio-8080-exec-6]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.InvalidCredentialsException: Incorrect password]
+2026-09-18 21:00:40
+                [http-nio-8080-exec-7]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 21:00:40
+                [http-nio-8080-exec-7]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful for email: user@company.com
+2026-09-18 21:01:50
+                [http-nio-8080-exec-9]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 21:01:50
+                [http-nio-8080-exec-9]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful for email: user@company.com
+2026-09-18 21:02:01
+                [http-nio-8080-exec-10]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 21:02:01
+                [http-nio-8080-exec-10]
+                ERROR
+                c.h.exception.GlobalExceptionHandler
+                - Unexpected application error
+com.hdfc.exception.InvalidCredentialsException: Incorrect password
+	at com.hdfc.controller.AuthController.login(AuthController.java:75)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$2(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:376)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-09-18 21:02:01
+                [http-nio-8080-exec-10]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.InvalidCredentialsException: Incorrect password]
+2026-09-18 21:04:18
+                [http-nio-8080-exec-3]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 21:04:18
+                [http-nio-8080-exec-3]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful for email: user@company.com
+2026-09-18 21:04:32
+                [http-nio-8080-exec-4]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 21:04:32
+                [http-nio-8080-exec-4]
+                ERROR
+                c.h.exception.GlobalExceptionHandler
+                - Unexpected application error
+com.hdfc.exception.InvalidCredentialsException: Incorrect password
+	at com.hdfc.controller.AuthController.login(AuthController.java:75)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$2(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:376)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-09-18 21:04:32
+                [http-nio-8080-exec-4]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.InvalidCredentialsException: Incorrect password]
+2026-09-18 21:06:00
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-18 21:06:00
+                [tomcat-shutdown]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Graceful shutdown complete
+2026-09-18 21:06:01
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Starting CapstoneOneApplication using Java 25.0.4 with PID 9690 (/Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne/target/classes started by PRASAD_S in /Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne)
+2026-09-18 21:06:01
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-09-18 21:06:01
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-18 21:06:01
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-18 21:06:01
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-18 21:06:02
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-09-18 21:06:02
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-18 21:06:02
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-09-18 21:06:02
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-18 21:06:02
+                [restartedMain]
+                INFO 
+                o.s.b.w.c.s.WebApplicationContextInitializer
+                - Root WebApplicationContext: initialization completed in 332 ms
+2026-09-18 21:06:02
+                [restartedMain]
+                WARN 
+                o.s.b.s.a.UserDetailsServiceAutoConfiguration
+                - 
+
+Using generated security password: 6c594d9e-8451-4b6a-ad94-9054c040ea67
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-18 21:06:02
+                [restartedMain]
+                INFO 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-18 21:06:02
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-18 21:06:02
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-09-18 21:06:02
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Started CapstoneOneApplication in 0.699 seconds (process running for 0.838)
+2026-09-18 21:06:02
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-18 21:06:02
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-18 21:06:22
+                [http-nio-8080-exec-1]
+                INFO 
+                o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-18 21:06:22
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'
+2026-09-18 21:06:22
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 1 ms
+2026-09-18 21:06:22
+                [http-nio-8080-exec-1]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 21:06:22
+                [http-nio-8080-exec-1]
+                ERROR
+                o.a.c.c.C.[.[.[.[dispatcherServlet]
+                - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: com.hdfc.exception.InvalidCredentialsException: Incorrect password] with root cause
+com.hdfc.exception.InvalidCredentialsException: Incorrect password
+	at com.hdfc.controller.AuthController.login(AuthController.java:75)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$2(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:376)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-09-18 21:09:57
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-18 21:09:57
+                [tomcat-shutdown]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Graceful shutdown complete
+2026-09-18 21:10:18
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Starting CapstoneOneApplication using Java 25.0.4 with PID 9865 (/Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne/target/classes started by PRASAD_S in /Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne)
+2026-09-18 21:10:18
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-09-18 21:10:18
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-18 21:10:18
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-18 21:10:18
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-18 21:10:19
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-09-18 21:10:19
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-18 21:10:19
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-09-18 21:10:19
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-18 21:10:19
+                [restartedMain]
+                INFO 
+                o.s.b.w.c.s.WebApplicationContextInitializer
+                - Root WebApplicationContext: initialization completed in 327 ms
+2026-09-18 21:10:19
+                [restartedMain]
+                WARN 
+                o.s.b.s.a.UserDetailsServiceAutoConfiguration
+                - 
+
+Using generated security password: d9a3cf9c-8f30-4ad3-86ba-a1989435afce
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-18 21:10:19
+                [restartedMain]
+                INFO 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-18 21:10:19
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-18 21:10:19
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-09-18 21:10:19
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Started CapstoneOneApplication in 0.7 seconds (process running for 0.844)
+2026-09-18 21:10:19
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-18 21:10:19
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-18 21:10:45
+                [http-nio-8080-exec-1]
+                INFO 
+                o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-18 21:10:45
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'
+2026-09-18 21:10:45
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 1 ms
+2026-09-18 21:15:32
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-18 21:15:32
+                [tomcat-shutdown]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Graceful shutdown complete
+2026-09-18 21:15:59
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Starting CapstoneOneApplication using Java 25.0.4 with PID 10416 (/Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne/target/classes started by PRASAD_S in /Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne)
+2026-09-18 21:15:59
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-09-18 21:15:59
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-18 21:15:59
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-18 21:15:59
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-18 21:15:59
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-09-18 21:15:59
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-18 21:15:59
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-09-18 21:15:59
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-18 21:15:59
+                [restartedMain]
+                INFO 
+                o.s.b.w.c.s.WebApplicationContextInitializer
+                - Root WebApplicationContext: initialization completed in 339 ms
+2026-09-18 21:15:59
+                [restartedMain]
+                WARN 
+                o.s.b.s.a.UserDetailsServiceAutoConfiguration
+                - 
+
+Using generated security password: 73a64a1e-d1b8-4202-9a97-5be996ca7bfd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-18 21:15:59
+                [restartedMain]
+                INFO 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-18 21:15:59
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-18 21:16:00
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-09-18 21:16:00
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Started CapstoneOneApplication in 0.721 seconds (process running for 0.865)
+2026-09-18 21:16:00
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-18 21:16:00
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-18 21:16:08
+                [http-nio-8080-exec-1]
+                INFO 
+                o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-18 21:16:08
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'
+2026-09-18 21:16:08
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 1 ms
+2026-09-18 21:16:08
+                [http-nio-8080-exec-4]
+                INFO 
+                o.s.api.AbstractOpenApiResource
+                - Init duration for springdoc-openapi is: 71 ms
+2026-09-18 21:17:21
+                [http-nio-8080-exec-7]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 21:17:21
+                [http-nio-8080-exec-7]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful for email: user@company.com
+2026-09-18 21:17:58
+                [http-nio-8080-exec-8]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 21:17:58
+                [http-nio-8080-exec-8]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Login failed for user@company.com: Incorrect password
+2026-09-18 21:18:17
+                [http-nio-8080-exec-9]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@compny.com
+2026-09-18 21:18:17
+                [http-nio-8080-exec-9]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Login failed: Email ID is not registered: user@compny.com
+2026-09-18 21:19:35
+                [http-nio-8080-exec-1]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: 
+2026-09-18 21:19:35
+                [http-nio-8080-exec-1]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Login failed: Email ID is required
+2026-09-18 21:20:10
+                [http-nio-8080-exec-2]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 21:20:10
+                [http-nio-8080-exec-2]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Login failed for user@company.com: Password is required
+2026-09-18 21:20:10
+                [http-nio-8080-exec-3]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 21:20:10
+                [http-nio-8080-exec-3]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Login failed for user@company.com: Password is required
+2026-09-18 21:20:28
+                [http-nio-8080-exec-4]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 21:20:28
+                [http-nio-8080-exec-4]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Login failed for user@company.com: Incorrect password
+2026-09-18 21:20:42
+                [http-nio-8080-exec-5]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@comany.com
+2026-09-18 21:20:42
+                [http-nio-8080-exec-5]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Login failed: Email ID is not registered: user@comany.com
+2026-09-18 21:20:48
+                [http-nio-8080-exec-6]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@comany.com
+2026-09-18 21:20:48
+                [http-nio-8080-exec-6]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Login failed: Email ID is not registered: user@comany.com
+2026-09-18 21:21:25
+                [http-nio-8080-exec-7]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: yog@comany.com
+2026-09-18 21:21:25
+                [http-nio-8080-exec-7]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Login failed: Email ID is not registered: yog@comany.com
+2026-09-18 21:22:06
+                [http-nio-8080-exec-8]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received for email: user@company.com
+2026-09-18 21:22:06
+                [http-nio-8080-exec-8]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful for email: user@company.com
+2026-09-18 21:28:19
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-18 21:28:19
+                [tomcat-shutdown]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Graceful shutdown complete
+2026-09-18 21:28:21
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Starting CapstoneOneApplication using Java 25.0.4 with PID 10891 (/Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne/target/classes started by PRASAD_S in /Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne)
+2026-09-18 21:28:21
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-09-18 21:28:21
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-18 21:28:21
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-18 21:28:21
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-18 21:28:21
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-09-18 21:28:21
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-18 21:28:21
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-09-18 21:28:21
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-18 21:28:21
+                [restartedMain]
+                INFO 
+                o.s.b.w.c.s.WebApplicationContextInitializer
+                - Root WebApplicationContext: initialization completed in 331 ms
+2026-09-18 21:28:21
+                [restartedMain]
+                WARN 
+                o.s.b.s.a.UserDetailsServiceAutoConfiguration
+                - 
+
+Using generated security password: a96818f7-c26e-4be8-b2d4-14875043d572
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-18 21:28:21
+                [restartedMain]
+                INFO 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-18 21:28:21
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-18 21:28:21
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-09-18 21:28:21
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Started CapstoneOneApplication in 0.711 seconds (process running for 0.866)
+2026-09-18 21:28:21
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-18 21:28:21
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-18 21:28:39
+                [http-nio-8080-exec-1]
+                INFO 
+                o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-18 21:28:39
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'
+2026-09-18 21:28:39
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 1 ms
+2026-09-18 21:28:40
+                [http-nio-8080-exec-4]
+                INFO 
+                o.s.api.AbstractOpenApiResource
+                - Init duration for springdoc-openapi is: 64 ms
+2026-09-18 21:29:56
+                [http-nio-8080-exec-7]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Registration request received for email: 
+2026-09-18 21:29:56
+                [http-nio-8080-exec-7]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Registration failed: Email ID is required
+2026-09-18 21:45:32
+                [http-nio-8080-exec-8]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Registration request received for email: string
+2026-09-18 21:45:32
+                [http-nio-8080-exec-8]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Registration successful for email: string
+2026-09-18 21:49:29
+                [http-nio-8080-exec-9]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Registration request received for email: string
+2026-09-18 21:49:29
+                [http-nio-8080-exec-9]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Registration failed for string: Password is required
+2026-09-18 22:26:25
+                [http-nio-8080-exec-1]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Registration request received for email: user@company.com
+2026-09-18 22:26:25
+                [http-nio-8080-exec-1]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Registration failed for user@company.com: Password is required
+2026-09-18 22:27:57
+                [http-nio-8080-exec-2]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Registration request received for email: string
+2026-09-18 22:27:57
+                [http-nio-8080-exec-2]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Registration failed: Email already registered: string
+2026-09-18 22:32:18
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-18 22:32:18
+                [tomcat-shutdown]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Graceful shutdown complete
+2026-09-18 22:32:20
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Starting CapstoneOneApplication using Java 25.0.4 with PID 13223 (/Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne/target/classes started by PRASAD_S in /Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne)
+2026-09-18 22:32:20
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-09-18 22:32:20
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-18 22:32:20
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-18 22:32:20
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-18 22:32:20
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-09-18 22:32:20
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-18 22:32:20
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-09-18 22:32:20
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-18 22:32:20
+                [restartedMain]
+                INFO 
+                o.s.b.w.c.s.WebApplicationContextInitializer
+                - Root WebApplicationContext: initialization completed in 378 ms
+2026-09-18 22:32:21
+                [restartedMain]
+                WARN 
+                o.s.b.s.a.UserDetailsServiceAutoConfiguration
+                - 
+
+Using generated security password: 7eb14664-600b-47b3-a04e-1f5457bb5978
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-18 22:32:21
+                [restartedMain]
+                INFO 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-18 22:32:21
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-18 22:32:21
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-09-18 22:32:21
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Started CapstoneOneApplication in 0.79 seconds (process running for 0.952)
+2026-09-18 22:32:21
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-18 22:32:21
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-18 22:34:17
+                [http-nio-8080-exec-1]
+                INFO 
+                o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-18 22:34:17
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'
+2026-09-18 22:34:17
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 1 ms
+2026-09-18 22:34:17
+                [http-nio-8080-exec-1]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Registration request received for email: string
+2026-09-18 22:34:17
+                [http-nio-8080-exec-1]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Registration successful for email: string
+2026-09-18 22:34:55
+                [http-nio-8080-exec-2]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-18 22:34:55
+                [http-nio-8080-exec-2]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Authentication failed: Token has expired
+2026-09-18 22:36:01
+                [http-nio-8080-exec-7]
+                INFO 
+                o.s.api.AbstractOpenApiResource
+                - Init duration for springdoc-openapi is: 83 ms
+2026-09-18 22:36:22
+                [http-nio-8080-exec-8]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Registration request received for email: string
+2026-09-18 22:36:22
+                [http-nio-8080-exec-8]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Registration failed: Email already registered: string
+2026-09-18 22:36:32
+                [http-nio-8080-exec-9]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Registration request received for email: yograj
+2026-09-18 22:36:32
+                [http-nio-8080-exec-9]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Registration successful for email: yograj
+2026-09-18 22:36:47
+                [http-nio-8080-exec-10]
+                ERROR
+                c.h.exception.GlobalExceptionHandler
+                - Unexpected application error
+org.springframework.web.bind.MissingRequestHeaderException: Required request header 'Authorization' for method parameter type String is not present
+	at org.springframework.web.method.annotation.RequestHeaderMethodArgumentResolver.handleMissingValue(RequestHeaderMethodArgumentResolver.java:89)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.handleMissingValue(AbstractNamedValueMethodArgumentResolver.java:230)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:123)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:224)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:174)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$2(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:376)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-09-18 22:36:47
+                [http-nio-8080-exec-10]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [org.springframework.web.bind.MissingRequestHeaderException: Required request header 'Authorization' for method parameter type String is not present]
+2026-09-18 22:37:08
+                [http-nio-8080-exec-1]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-18 22:37:08
+                [http-nio-8080-exec-1]
+                WARN 
+                com.hdfc.controller.AuthController
+                - Authentication failed: Token has expired

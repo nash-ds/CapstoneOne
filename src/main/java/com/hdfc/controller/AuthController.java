@@ -1,5 +1,6 @@
 package com.hdfc.controller;
 
+import com.hdfc.exception.AuthException;
 import com.hdfc.model.LoginRequest;
 import com.hdfc.model.User;
 import com.hdfc.services.JwtService;
@@ -11,8 +12,12 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,108 +28,332 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AuthController {
 
+    private static final Logger log =
+            LoggerFactory.getLogger(AuthController.class);
+
     private final JwtService jwtService;
     private final UserService userService;
-    
 
-    AuthController(JwtService jwtService, UserService userService){
+
+    public AuthController(
+            JwtService jwtService,
+            UserService userService) {
+
         this.jwtService = jwtService;
         this.userService = userService;
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<ApiResponse<Map<String, String>>> login(@RequestBody LoginRequest request) {
-        System.out.println("entered func");
-        User user = userService.findByEmail(request.getEmail());
 
-        if (user != null && user.getPassword().equals(request.getPassword())) {
-            String token = jwtService.generateToken(user);
-            userService.registerToken(token);
-            String refreshToken = jwtService.generateRefreshToken(user);
-            userService.registerRefreshToken(refreshToken);
-            Map<String, String> body = new HashMap<>();
-            body.put("token", token);
-            body.put("refreshToken",refreshToken);
-            ApiResponse<Map<String, String>> response = ApiResponse.success(HttpStatus.OK.value(),"Login Successful",body);
-            return ResponseEntity.ok(response);
+    // =========================================================
+    // LOGIN
+    // =========================================================
+
+    @PostMapping("/login")
+    public ResponseEntity<ApiResponse<Map<String, String>>> login(
+            @RequestBody LoginRequest request) {
+
+        log.info("Login request received");
+
+        if (request.getEmail() == null ||
+                request.getEmail().trim().isEmpty()) {
+
+            throw AuthException.emailRequired();
         }
-        ApiResponse<Map<String, String>> response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(),"Login Failed");
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
-    }
-    
-    @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody User user) {
-        //TODO: Error handling
-        userService.save(user);
-        String token = jwtService.generateToken(user);
+
+        if (request.getPassword() == null ||
+                request.getPassword().isEmpty()) {
+
+            throw AuthException.passwordRequired();
+        }
+
+        User user =
+                userService.findByEmail(request.getEmail());
+
+        if (user == null) {
+
+            throw AuthException.emailNotRegistered();
+        }
+
+        if (!user.getPassword().equals(request.getPassword())) {
+
+            throw AuthException.incorrectPassword();
+        }
+
+        String token =
+                jwtService.generateToken(user);
+
         userService.registerToken(token);
-        String refreshToken = jwtService.generateRefreshToken(user);
+
+        String refreshToken =
+                jwtService.generateRefreshToken(user);
+
         userService.registerRefreshToken(refreshToken);
-        Map<String, String> body = new HashMap<>();
+
+        Map<String, String> body =
+                new HashMap<>();
+
         body.put("token", token);
-        body.put("refreshToken",refreshToken);
-        ApiResponse<Map<String, String>> response = ApiResponse.success(HttpStatus.OK.value(),"Registration Successful",body);
+        body.put("refreshToken", refreshToken);
+
+        log.info("Login successful");
+
+        ApiResponse<Map<String, String>> response =
+                ApiResponse.success(
+                        HttpStatus.OK.value(),
+                        "Login Successful",
+                        body
+                );
+
         return ResponseEntity.ok(response);
     }
-    
+
+
+    // =========================================================
+    // REGISTER
+    // =========================================================
+
+    @PostMapping("/register")
+    public ResponseEntity<ApiResponse<Map<String, String>>> register(
+            @RequestBody User user) {
+
+        log.info("Registration request received");
+
+        if (user.getEmail() == null ||
+                user.getEmail().trim().isEmpty()) {
+
+            throw AuthException.emailRequired();
+        }
+
+        if (user.getPassword() == null ||
+                user.getPassword().isEmpty()) {
+
+            throw AuthException.passwordRequired();
+        }
+
+        User existingUser =
+                userService.findByEmail(user.getEmail());
+
+        if (existingUser != null) {
+
+            throw AuthException.emailAlreadyRegistered();
+        }
+
+        userService.save(user);
+
+        String token =
+                jwtService.generateToken(user);
+
+        userService.registerToken(token);
+
+        String refreshToken =
+                jwtService.generateRefreshToken(user);
+
+        userService.registerRefreshToken(refreshToken);
+
+        Map<String, String> body =
+                new HashMap<>();
+
+        body.put("token", token);
+        body.put("refreshToken", refreshToken);
+
+        log.info("Registration successful");
+
+        ApiResponse<Map<String, String>> response =
+                ApiResponse.success(
+                        HttpStatus.OK.value(),
+                        "Registration Successful",
+                        body
+                );
+
+        return ResponseEntity.ok(response);
+    }
+
+
+    // =========================================================
+    // AUTH
+    // =========================================================
+
     @GetMapping("/auth")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<ApiResponse<String>> validateAuth(@RequestHeader("Authorization") String authHeader) {
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            ApiResponse response = ApiResponse.error(HttpStatus.BAD_REQUEST.value(),"Missing token");
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+    public ResponseEntity<ApiResponse<String>> validateAuth(
+            @RequestHeader(
+                    value = "Authorization",
+                    required = false
+            )
+            String authHeader) {
+
+        log.info("Authentication validation request received");
+
+        if (authHeader == null ||
+                !authHeader.startsWith("Bearer ")) {
+
+            throw AuthException.authorizationTokenRequired();
         }
 
-        String token = authHeader.substring(7);
-        if (userService.isTokenActive(token) && jwtService.isValid(token)) {
-//            String email = jwtService.getSubject(token);
-            ApiResponse response = ApiResponse.success(HttpStatus.OK.value(), jwtService.isValidDetailed(token), true);
-            return ResponseEntity.status(HttpStatus.OK).body(response);
+        String token =
+                authHeader.substring(7);
+
+        if (token.trim().isEmpty()) {
+
+            throw AuthException.authorizationTokenEmpty();
         }
 
-        ApiResponse response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(), jwtService.isValidDetailed(token));
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+        if (!userService.isTokenActive(token)) {
+
+            throw AuthException.tokenInactive();
+        }
+
+        if ("EXPIRED".equals(
+                jwtService.isValidDetailed(token))) {
+
+            throw AuthException.tokenExpired();
+        }
+
+        if (!jwtService.isValid(token)) {
+
+            throw AuthException.invalidAuthenticationToken();
+        }
+
+        log.info("Authentication successful");
+
+        ApiResponse<String> response =
+                ApiResponse.success(
+                        HttpStatus.OK.value(),
+                        "VALID",
+                        "Authentication successful"
+                );
+
+        return ResponseEntity.ok(response);
     }
+
+
+    // =========================================================
+    // REFRESH
+    // =========================================================
 
     @GetMapping("/refresh")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<ApiResponse<Map<String,String>>> refreshToken(@RequestHeader("Authorization") String authHeader) {
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            ApiResponse response = ApiResponse.error(HttpStatus.BAD_REQUEST.value(),"Missing token");
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+    public ResponseEntity<ApiResponse<Map<String, String>>> refreshToken(
+            @RequestHeader(
+                    value = "Authorization",
+                    required = false
+            )
+            String authHeader) {
+
+        log.info("Refresh token request received");
+
+        if (authHeader == null ||
+                !authHeader.startsWith("Bearer ")) {
+
+            throw AuthException.refreshTokenRequired();
         }
 
-        String refreshToken = authHeader.substring(7);
+        String refreshToken =
+                authHeader.substring(7);
 
-        if (refreshToken != null && jwtService.isValid(refreshToken) && userService.isRefreshTokenActive(refreshToken)) {
+        if (refreshToken.trim().isEmpty()) {
 
-            String email = jwtService.getSubject(refreshToken);
-            User user = userService.findByEmail(email);
-
-            if (user != null) {
-                // 2. Generate a new Access Token (and optionally rotate the refresh token)
-                String newAccessToken = jwtService.generateToken(user);
-                Map<String, String> body = new HashMap<>();
-                body.put("token", newAccessToken);
-                userService.registerToken(newAccessToken);
-                body.put("refreshToken",refreshToken);
-                ApiResponse authResponse = ApiResponse.success(HttpStatus.CREATED.value(), "Token refreshed successfully",body);
-                return ResponseEntity.status(HttpStatus.CREATED).body(authResponse);
-            }
+            throw AuthException.refreshTokenEmpty();
         }
+
+        if (!userService.isRefreshTokenActive(refreshToken)) {
+
+            throw AuthException.refreshTokenInactive();
+        }
+
+        if ("EXPIRED".equals(
+                jwtService.isValidDetailed(refreshToken))) {
+
+            throw AuthException.refreshTokenExpired();
+        }
+
+        if (!jwtService.isValid(refreshToken)) {
+
+            throw AuthException.invalidRefreshToken();
+        }
+
+        String email =
+                jwtService.getSubject(refreshToken);
+
+        User user =
+                userService.findByEmail(email);
+
+        if (user == null) {
+
+            throw AuthException.refreshUserNotFound();
+        }
+
+        String newAccessToken =
+                jwtService.generateToken(user);
+
+        userService.registerToken(newAccessToken);
+
+        Map<String, String> body =
+                new HashMap<>();
+
+        body.put("token", newAccessToken);
+        body.put("refreshToken", refreshToken);
+
+        log.info("Access token refreshed successfully");
+
+        ApiResponse<Map<String, String>> response =
+                ApiResponse.success(
+                        HttpStatus.CREATED.value(),
+                        "Token refreshed successfully",
+                        body
+                );
 
         return ResponseEntity
-                .status(HttpStatus.UNAUTHORIZED)
-                .body(ApiResponse.error(HttpStatus.UNAUTHORIZED.value(), "Invalid or expired refresh token"));
+                .status(HttpStatus.CREATED)
+                .body(response);
     }
+
+
+    // =========================================================
+    // LOGOUT
+    // =========================================================
 
     @PostMapping("/logoutUser")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<?> logout(@RequestHeader(value = "Authorization") String authHeader) {
-        if (authHeader != null && authHeader.startsWith("Bearer ")) {
-            String token = authHeader.substring(7);
-            userService.invalidateToken(token);
+    public ResponseEntity<ApiResponse<String>> logout(
+            @RequestHeader(
+                    value = "Authorization",
+                    required = false
+            )
+            String authHeader) {
+
+        log.info("Logout request received");
+
+        if (authHeader == null ||
+                !authHeader.startsWith("Bearer ")) {
+
+            throw AuthException.authorizationTokenRequired();
         }
-        return ResponseEntity.ok("Logged out successfully");
+
+        String token =
+                authHeader.substring(7);
+
+        if (token.trim().isEmpty()) {
+
+            throw AuthException.authorizationTokenEmpty();
+        }
+
+        if (!userService.isTokenActive(token)) {
+
+            throw AuthException.logoutTokenInactive();
+        }
+
+        userService.invalidateToken(token);
+
+        log.info("Logout successful");
+
+        ApiResponse<String> response =
+                ApiResponse.success(
+                        HttpStatus.OK.value(),
+                        "Logged out successfully",
+                        null
+                );
+
+        return ResponseEntity.ok(response);
     }
 }
