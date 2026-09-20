@@ -6,6 +6,9 @@ import com.hdfc.services.JwtService;
 import com.hdfc.services.UserService;
 import com.hdfc.utility.ApiResponse;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.RequestNotPermitted;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 import java.util.HashMap;
@@ -19,8 +22,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
 
+// import com.hdfc.services.ResilientLoginService;
 
 
 @RestController
@@ -28,14 +31,19 @@ public class AuthController {
 
     private final JwtService jwtService;
     private final UserService userService;
-    
+    // private final ResilientLoginService resilientLoginService;
+
 
     AuthController(JwtService jwtService, UserService userService){
         this.jwtService = jwtService;
         this.userService = userService;
+        // this.resilientLoginService = resilientLoginService;
     }
 
-    @PostMapping("/login")
+@PostMapping("/login")
+    // Explicitly set aspect order so CircuitBreaker runs BEFORE RateLimiter
+    @CircuitBreaker(name = "dbBreaker", fallbackMethod = "dbFallback")
+    @RateLimiter(name = "authRateLimiter", fallbackMethod = "findByEmailFallbackRL")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         System.out.println("entered func");
         User user = userService.findByEmail(request.getEmail());
@@ -47,14 +55,33 @@ public class AuthController {
             userService.registerRefreshToken(user.getEmail(), refreshToken);
             Map<String, String> body = new HashMap<>();
             body.put("token", token);
-            body.put("refreshToken",refreshToken);
-            ApiResponse<Map<String, String>> response = ApiResponse.success(HttpStatus.OK.value(),"Login Successful",body);
+            body.put("refreshToken", refreshToken);
+            ApiResponse<Map<String, String>> response = ApiResponse.success(HttpStatus.OK.value(), "Login Successful", body);
             return ResponseEntity.ok(response);
         }
-        ApiResponse<Map<String, String>> response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(),"Login Failed");
+        ApiResponse<Map<String, String>> response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(), "Login Failed");
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
     }
-    
+
+    // Rate Limiter Fallback (429)
+    public ResponseEntity<?> findByEmailFallbackRL(LoginRequest request, RequestNotPermitted throwable) {
+        ApiResponse<String> response = ApiResponse.error(
+            HttpStatus.TOO_MANY_REQUESTS.value(), 
+            "Too many login attempts. Please try again after 1 minute."
+        );
+        return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).body(response);
+    }
+
+    // Circuit Breaker Fallback (503)
+    public ResponseEntity<?> dbFallback(LoginRequest request, Throwable t) {
+        System.out.println(">>> CIRCUIT BREAKER TRIGGERED! Error: " + t.getMessage());
+        ApiResponse<String> response = ApiResponse.error(
+            HttpStatus.SERVICE_UNAVAILABLE.value(), 
+            "Database service is currently unavailable. Please try again later."
+        );
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(response);
+    }
+
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody LoginRequest loginRequest) {
         //TODO: Error handling
