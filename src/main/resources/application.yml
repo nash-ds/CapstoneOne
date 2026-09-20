@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: CapstoneOne
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/flywaydb
+    username: NASHD
+    password: password
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+resilience4j:
+  ratelimiter:
+    instances:
+      loginRateLimiter:
+        limitForPeriod: 3
+        limitRefreshPeriod: 10s
+        timeoutDuration: 0s
+
+  circuitbreaker:
+    instances:
+      externalLoginService:
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 2

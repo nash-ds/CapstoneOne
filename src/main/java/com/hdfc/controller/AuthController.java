@@ -4,12 +4,14 @@ import com.hdfc.exception.AuthException;
 import com.hdfc.model.LoginRequest;
 import com.hdfc.model.User;
 import com.hdfc.services.JwtService;
+import com.hdfc.services.ResilientLoginService;
 import com.hdfc.services.UserService;
 import com.hdfc.utility.ApiResponse;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -24,7 +26,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 public class AuthController {
 
@@ -33,20 +34,17 @@ public class AuthController {
 
     private final JwtService jwtService;
     private final UserService userService;
-
+    private final ResilientLoginService resilientLoginService;
 
     public AuthController(
             JwtService jwtService,
-            UserService userService) {
+            UserService userService,
+            ResilientLoginService resilientLoginService) {
 
         this.jwtService = jwtService;
         this.userService = userService;
+        this.resilientLoginService = resilientLoginService;
     }
-
-
-    // =========================================================
-    // LOGIN
-    // =========================================================
 
     @PostMapping("/login")
     public ResponseEntity<ApiResponse<Map<String, String>>> login(
@@ -66,6 +64,12 @@ public class AuthController {
             throw AuthException.passwordRequired();
         }
 
+        resilientLoginService.authenticate(
+                request.getEmail(),
+                request.getPassword(),
+                false
+        );
+
         User user =
                 userService.findByEmail(request.getEmail());
 
@@ -82,12 +86,18 @@ public class AuthController {
         String token =
                 jwtService.generateToken(user);
 
-        userService.registerToken(token);
+        userService.registerToken(
+                user.getEmail(),
+                token
+        );
 
         String refreshToken =
                 jwtService.generateRefreshToken(user);
 
-        userService.registerRefreshToken(refreshToken);
+        userService.registerRefreshToken(
+                user.getEmail(),
+                refreshToken
+        );
 
         Map<String, String> body =
                 new HashMap<>();
@@ -95,7 +105,10 @@ public class AuthController {
         body.put("token", token);
         body.put("refreshToken", refreshToken);
 
-        log.info("Login successful");
+        log.info(
+                "Login successful for email: {}",
+                user.getEmail()
+        );
 
         ApiResponse<Map<String, String>> response =
                 ApiResponse.success(
@@ -106,11 +119,6 @@ public class AuthController {
 
         return ResponseEntity.ok(response);
     }
-
-
-    // =========================================================
-    // REGISTER
-    // =========================================================
 
     @PostMapping("/register")
     public ResponseEntity<ApiResponse<Map<String, String>>> register(
@@ -143,12 +151,18 @@ public class AuthController {
         String token =
                 jwtService.generateToken(user);
 
-        userService.registerToken(token);
+        userService.registerToken(
+                user.getEmail(),
+                token
+        );
 
         String refreshToken =
                 jwtService.generateRefreshToken(user);
 
-        userService.registerRefreshToken(refreshToken);
+        userService.registerRefreshToken(
+                user.getEmail(),
+                refreshToken
+        );
 
         Map<String, String> body =
                 new HashMap<>();
@@ -156,7 +170,10 @@ public class AuthController {
         body.put("token", token);
         body.put("refreshToken", refreshToken);
 
-        log.info("Registration successful");
+        log.info(
+                "Registration successful for email: {}",
+                user.getEmail()
+        );
 
         ApiResponse<Map<String, String>> response =
                 ApiResponse.success(
@@ -167,11 +184,6 @@ public class AuthController {
 
         return ResponseEntity.ok(response);
     }
-
-
-    // =========================================================
-    // AUTH
-    // =========================================================
 
     @GetMapping("/auth")
     @SecurityRequirement(name = "bearerAuth")
@@ -184,35 +196,9 @@ public class AuthController {
 
         log.info("Authentication validation request received");
 
-        if (authHeader == null ||
-                !authHeader.startsWith("Bearer ")) {
+        String token = extractBearerToken(authHeader);
 
-            throw AuthException.authorizationTokenRequired();
-        }
-
-        String token =
-                authHeader.substring(7);
-
-        if (token.trim().isEmpty()) {
-
-            throw AuthException.authorizationTokenEmpty();
-        }
-
-        if (!userService.isTokenActive(token)) {
-
-            throw AuthException.tokenInactive();
-        }
-
-        if ("EXPIRED".equals(
-                jwtService.isValidDetailed(token))) {
-
-            throw AuthException.tokenExpired();
-        }
-
-        if (!jwtService.isValid(token)) {
-
-            throw AuthException.invalidAuthenticationToken();
-        }
+        validateAccessToken(token);
 
         log.info("Authentication successful");
 
@@ -226,11 +212,6 @@ public class AuthController {
         return ResponseEntity.ok(response);
     }
 
-
-    // =========================================================
-    // REFRESH
-    // =========================================================
-
     @GetMapping("/refresh")
     @SecurityRequirement(name = "bearerAuth")
     public ResponseEntity<ApiResponse<Map<String, String>>> refreshToken(
@@ -242,51 +223,44 @@ public class AuthController {
 
         log.info("Refresh token request received");
 
-        if (authHeader == null ||
-                !authHeader.startsWith("Bearer ")) {
-
-            throw AuthException.refreshTokenRequired();
-        }
-
         String refreshToken =
-                authHeader.substring(7);
+                extractRefreshToken(authHeader);
 
-        if (refreshToken.trim().isEmpty()) {
+        String validationStatus =
+                jwtService.isValidDetailed(refreshToken);
 
-            throw AuthException.refreshTokenEmpty();
-        }
-
-        if (!userService.isRefreshTokenActive(refreshToken)) {
-
-            throw AuthException.refreshTokenInactive();
-        }
-
-        if ("EXPIRED".equals(
-                jwtService.isValidDetailed(refreshToken))) {
-
+        if ("EXPIRED".equals(validationStatus)) {
             throw AuthException.refreshTokenExpired();
         }
 
-        if (!jwtService.isValid(refreshToken)) {
-
+        if (!"VALID".equals(validationStatus)) {
             throw AuthException.invalidRefreshToken();
         }
 
         String email =
                 jwtService.getSubject(refreshToken);
 
+        if (!userService.isRefreshTokenActive(
+                email,
+                refreshToken)) {
+
+            throw AuthException.refreshTokenInactive();
+        }
+
         User user =
                 userService.findByEmail(email);
 
         if (user == null) {
-
             throw AuthException.refreshUserNotFound();
         }
 
         String newAccessToken =
                 jwtService.generateToken(user);
 
-        userService.registerToken(newAccessToken);
+        userService.registerToken(
+                email,
+                newAccessToken
+        );
 
         Map<String, String> body =
                 new HashMap<>();
@@ -294,7 +268,10 @@ public class AuthController {
         body.put("token", newAccessToken);
         body.put("refreshToken", refreshToken);
 
-        log.info("Access token refreshed successfully");
+        log.info(
+                "Access token refreshed successfully for email: {}",
+                email
+        );
 
         ApiResponse<Map<String, String>> response =
                 ApiResponse.success(
@@ -308,11 +285,6 @@ public class AuthController {
                 .body(response);
     }
 
-
-    // =========================================================
-    // LOGOUT
-    // =========================================================
-
     @PostMapping("/logoutUser")
     @SecurityRequirement(name = "bearerAuth")
     public ResponseEntity<ApiResponse<String>> logout(
@@ -324,6 +296,141 @@ public class AuthController {
 
         log.info("Logout request received");
 
+        String token =
+                extractBearerToken(authHeader);
+
+        String email =
+                validateAccessToken(token);
+
+        if (!userService.isTokenActive(
+                email,
+                token)) {
+
+            throw AuthException.logoutTokenInactive();
+        }
+
+        userService.logout(token);
+
+        log.info(
+                "Logout successful for email: {}",
+                email
+        );
+
+        ApiResponse<String> response =
+                ApiResponse.success(
+                        HttpStatus.OK.value(),
+                        "Logged out successfully",
+                        null
+                );
+
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/user")
+    @SecurityRequirement(name = "bearerAuth")
+    public ResponseEntity<ApiResponse<User>> getUser(
+            @RequestHeader(
+                    value = "Authorization",
+                    required = false
+            )
+            String authHeader) {
+
+        log.info("Get user request received");
+
+        String token =
+                extractBearerToken(authHeader);
+
+        String email =
+                validateAccessToken(token);
+
+        User user =
+                userService.findByEmail(email);
+
+        if (user == null) {
+            throw AuthException.userNotFound();
+        }
+
+        log.info(
+                "User details fetched successfully for email: {}",
+                email
+        );
+
+        ApiResponse<User> response =
+                ApiResponse.success(
+                        HttpStatus.OK.value(),
+                        "User fetched successfully",
+                        user
+                );
+
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/test-circuit-breaker")
+    public ResponseEntity<ApiResponse<String>> testCircuitBreaker() {
+
+        log.info("CircuitBreaker test request received");
+
+        resilientLoginService.circuitProtectedLogin(
+                "prasad@gmail.com",
+                "prasad123",
+                true
+        );
+
+        ApiResponse<String> response =
+                ApiResponse.success(
+                        HttpStatus.OK.value(),
+                        "External service successful",
+                        "CircuitBreaker is CLOSED"
+                );
+
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/admin")
+    @SecurityRequirement(name = "bearerAuth")
+    public ResponseEntity<ApiResponse<List<User>>> getAllUsers(
+            @RequestHeader(
+                    value = "Authorization",
+                    required = false
+            )
+            String authHeader) {
+
+        log.info("Get all users request received");
+
+        String token =
+                extractBearerToken(authHeader);
+
+        String email =
+                validateAccessToken(token);
+
+        User user =
+                userService.findByEmail(email);
+
+        if (user == null) {
+            throw AuthException.userNotFound();
+        }
+
+        if (!userService.isAdmin(user)) {
+            throw AuthException.notAuthorizedToViewUsers();
+        }
+
+        List<User> users =
+                userService.getAllUsers();
+
+        log.info("All users fetched successfully");
+
+        ApiResponse<List<User>> response =
+                ApiResponse.success(
+                        HttpStatus.OK.value(),
+                        "Users fetched successfully",
+                        users
+                );
+
+        return ResponseEntity.ok(response);
+    }
+
+    private String extractBearerToken(String authHeader) {
+
         if (authHeader == null ||
                 !authHeader.startsWith("Bearer ")) {
 
@@ -334,26 +441,53 @@ public class AuthController {
                 authHeader.substring(7);
 
         if (token.trim().isEmpty()) {
-
             throw AuthException.authorizationTokenEmpty();
         }
 
-        if (!userService.isTokenActive(token)) {
+        return token;
+    }
 
-            throw AuthException.logoutTokenInactive();
+    private String extractRefreshToken(String authHeader) {
+
+        if (authHeader == null ||
+                !authHeader.startsWith("Bearer ")) {
+
+            throw AuthException.refreshTokenRequired();
         }
 
-        userService.invalidateToken(token);
+        String refreshToken =
+                authHeader.substring(7);
 
-        log.info("Logout successful");
+        if (refreshToken.trim().isEmpty()) {
+            throw AuthException.refreshTokenEmpty();
+        }
 
-        ApiResponse<String> response =
-                ApiResponse.success(
-                        HttpStatus.OK.value(),
-                        "Logged out successfully",
-                        null
-                );
+        return refreshToken;
+    }
 
-        return ResponseEntity.ok(response);
+    private String validateAccessToken(String token) {
+
+        String validationStatus =
+                jwtService.isValidDetailed(token);
+
+        if ("EXPIRED".equals(validationStatus)) {
+            throw AuthException.tokenExpired();
+        }
+
+        if (!"VALID".equals(validationStatus)) {
+            throw AuthException.invalidAuthenticationToken();
+        }
+
+        String email =
+                jwtService.getSubject(token);
+
+        if (!userService.isTokenActive(
+                email,
+                token)) {
+
+            throw AuthException.tokenInactive();
+        }
+
+        return email;
     }
 }

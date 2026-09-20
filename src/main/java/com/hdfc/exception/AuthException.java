@@ -16,9 +16,9 @@ public class AuthException extends RuntimeException {
     }
 
 
-    // =========================================================
-    // LOGIN EXCEPTIONS
-    // =========================================================
+    // =========================
+    // LOGIN
+    // =========================
 
     public static AuthException emailRequired() {
         return new AuthException(
@@ -49,9 +49,9 @@ public class AuthException extends RuntimeException {
     }
 
 
-    // =========================================================
-    // REGISTER EXCEPTIONS
-    // =========================================================
+    // =========================
+    // REGISTER
+    // =========================
 
     public static AuthException emailAlreadyRegistered() {
         return new AuthException(
@@ -61,9 +61,9 @@ public class AuthException extends RuntimeException {
     }
 
 
-    // =========================================================
-    // AUTH EXCEPTIONS
-    // =========================================================
+    // =========================
+    // AUTH
+    // =========================
 
     public static AuthException authorizationTokenRequired() {
         return new AuthException(
@@ -101,9 +101,9 @@ public class AuthException extends RuntimeException {
     }
 
 
-    // =========================================================
-    // REFRESH TOKEN EXCEPTIONS
-    // =========================================================
+    // =========================
+    // REFRESH TOKEN
+    // =========================
 
     public static AuthException refreshTokenRequired() {
         return new AuthException(
@@ -148,14 +148,45 @@ public class AuthException extends RuntimeException {
     }
 
 
-    // =========================================================
-    // LOGOUT EXCEPTIONS
-    // =========================================================
+    // =========================
+    // LOGOUT
+    // =========================
 
     public static AuthException logoutTokenInactive() {
         return new AuthException(
                 HttpStatus.UNAUTHORIZED,
                 "Token is already inactive or invalid"
+        );
+    }
+
+
+    // =========================
+    // GET USER
+    // =========================
+
+    public static AuthException userNotFound() {
+        return new AuthException(
+                HttpStatus.NOT_FOUND,
+                "User not found"
+        );
+    }
+
+
+    // =========================
+    // ADMIN
+    // =========================
+
+    public static AuthException adminAccessTokenRequired() {
+        return new AuthException(
+                HttpStatus.BAD_REQUEST,
+                "Authorization token is required"
+        );
+    }
+
+    public static AuthException notAuthorizedToViewUsers() {
+        return new AuthException(
+                HttpStatus.UNAUTHORIZED,
+                "Not authorized to view all users"
         );
     }
 }

@@ -17,11 +17,6 @@ public class GlobalExceptionHandler {
     private static final Logger log =
             LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-
-    // ==============================
-    // AUTH EXCEPTION
-    // ==============================
-
     @ExceptionHandler(AuthException.class)
     public ResponseEntity<ApiResponse<Void>> handleAuthException(
             AuthException ex) {
@@ -42,16 +37,14 @@ public class GlobalExceptionHandler {
                 .body(response);
     }
 
-
-    // ==============================
-    // USER NOT FOUND
-    // ==============================
-
     @ExceptionHandler(UserNotFoundException.class)
     public ResponseEntity<ApiResponse<Void>> handleUserNotFound(
             UserNotFoundException ex) {
 
-        log.warn("User not found: {}", ex.getMessage());
+        log.warn(
+                "User not found: {}",
+                ex.getMessage()
+        );
 
         ApiResponse<Void> response =
                 ApiResponse.error(
@@ -64,10 +57,45 @@ public class GlobalExceptionHandler {
                 .body(response);
     }
 
+    @ExceptionHandler(RateLimitExceededException.class)
+    public ResponseEntity<ApiResponse<Void>> handleRateLimitExceeded(
+            RateLimitExceededException ex) {
 
-    // ==============================
-    // EXTERNAL SERVICE ERROR
-    // ==============================
+        log.warn(
+                "Rate limit exceeded: {}",
+                ex.getMessage()
+        );
+
+        ApiResponse<Void> response =
+                ApiResponse.error(
+                        HttpStatus.TOO_MANY_REQUESTS.value(),
+                        ex.getMessage()
+                );
+
+        return ResponseEntity
+                .status(HttpStatus.TOO_MANY_REQUESTS)
+                .body(response);
+    }
+
+    @ExceptionHandler(CircuitBreakerException.class)
+    public ResponseEntity<ApiResponse<Void>> handleCircuitBreaker(
+            CircuitBreakerException ex) {
+
+        log.error(
+                "Circuit breaker triggered: {}",
+                ex.getMessage()
+        );
+
+        ApiResponse<Void> response =
+                ApiResponse.error(
+                        HttpStatus.SERVICE_UNAVAILABLE.value(),
+                        ex.getMessage()
+                );
+
+        return ResponseEntity
+                .status(HttpStatus.SERVICE_UNAVAILABLE)
+                .body(response);
+    }
 
     @ExceptionHandler(ExternalServiceException.class)
     public ResponseEntity<ApiResponse<Void>> handleExternalService(
@@ -89,11 +117,6 @@ public class GlobalExceptionHandler {
                 .body(response);
     }
 
-
-    // ==============================
-    // BAD REQUEST
-    // ==============================
-
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ApiResponse<Void>> handleBadRequest(
             IllegalArgumentException ex) {
@@ -113,11 +136,6 @@ public class GlobalExceptionHandler {
                 .status(HttpStatus.BAD_REQUEST)
                 .body(response);
     }
-
-
-    // ==============================
-    // GENERAL EXCEPTION
-    // ==============================
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiResponse<Void>> handleGeneralException(

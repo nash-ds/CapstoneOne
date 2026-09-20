@@ -1,0 +1,646 @@
+2026-09-19 12:42:51
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-19 12:42:51
+                [tomcat-shutdown]
+                INFO 
+                o.s.boot.tomcat.GracefulShutdown
+                - Graceful shutdown complete
+2026-09-19 12:42:52
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Starting CapstoneOneApplication using Java 25.0.4 with PID 17569 (/Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne/target/classes started by PRASAD_S in /Users/PRASAD_S/Desktop/hdfc_Java_ws/CapstoneOne)
+2026-09-19 12:42:52
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-09-19 12:42:52
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-19 12:42:52
+                [restartedMain]
+                INFO 
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor
+                - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-19 12:42:52
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-19 12:42:53
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-09-19 12:42:53
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-19 12:42:53
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-09-19 12:42:53
+                [restartedMain]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-19 12:42:53
+                [restartedMain]
+                INFO 
+                o.s.b.w.c.s.WebApplicationContextInitializer
+                - Root WebApplicationContext: initialization completed in 366 ms
+2026-09-19 12:42:53
+                [restartedMain]
+                WARN 
+                o.s.b.s.a.UserDetailsServiceAutoConfiguration
+                - 
+
+Using generated security password: 90532122-ab70-42d4-b8a0-cbca6750c039
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-19 12:42:53
+                [restartedMain]
+                INFO 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-19 12:42:53
+                [restartedMain]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-19 12:42:53
+                [restartedMain]
+                INFO 
+                o.s.boot.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-09-19 12:42:53
+                [restartedMain]
+                INFO 
+                com.hdfc.CapstoneOneApplication
+                - Started CapstoneOneApplication in 0.779 seconds (process running for 0.937)
+2026-09-19 12:42:53
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-19 12:42:53
+                [restartedMain]
+                WARN 
+                o.s.c.events.SpringDocAppInitializer
+                - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-19 12:43:08
+                [http-nio-8080-exec-1]
+                INFO 
+                o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-19 12:43:08
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'
+2026-09-19 12:43:08
+                [http-nio-8080-exec-1]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 1 ms
+2026-09-19 12:43:08
+                [http-nio-8080-exec-4]
+                INFO 
+                o.s.api.AbstractOpenApiResource
+                - Init duration for springdoc-openapi is: 74 ms
+2026-09-19 12:43:18
+                [http-nio-8080-exec-5]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Registration request received
+2026-09-19 12:43:18
+                [http-nio-8080-exec-5]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Registration successful
+2026-09-19 12:48:46
+                [http-nio-8080-exec-8]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 12:48:46
+                [http-nio-8080-exec-8]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful
+2026-09-19 12:49:45
+                [http-nio-8080-exec-9]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 12:49:45
+                [http-nio-8080-exec-9]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Email ID is not registered
+2026-09-19 12:49:45
+                [http-nio-8080-exec-9]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Email ID is not registered]
+2026-09-19 12:50:37
+                [http-nio-8080-exec-10]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 12:50:37
+                [http-nio-8080-exec-10]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful
+2026-09-19 12:50:50
+                [http-nio-8080-exec-1]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 12:50:50
+                [http-nio-8080-exec-1]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Incorrect password
+2026-09-19 12:50:50
+                [http-nio-8080-exec-1]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Incorrect password]
+2026-09-19 12:50:50
+                [http-nio-8080-exec-2]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 12:50:50
+                [http-nio-8080-exec-2]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Incorrect password
+2026-09-19 12:50:50
+                [http-nio-8080-exec-2]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Incorrect password]
+2026-09-19 12:51:08
+                [http-nio-8080-exec-3]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 12:51:08
+                [http-nio-8080-exec-3]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Email ID is required
+2026-09-19 12:51:08
+                [http-nio-8080-exec-3]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Email ID is required]
+2026-09-19 12:51:50
+                [http-nio-8080-exec-4]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 12:51:50
+                [http-nio-8080-exec-4]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Password is required
+2026-09-19 12:51:50
+                [http-nio-8080-exec-4]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Password is required]
+2026-09-19 12:52:03
+                [http-nio-8080-exec-5]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 12:52:03
+                [http-nio-8080-exec-5]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Incorrect password
+2026-09-19 12:52:03
+                [http-nio-8080-exec-5]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Incorrect password]
+2026-09-19 12:52:10
+                [http-nio-8080-exec-6]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 12:52:10
+                [http-nio-8080-exec-6]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful
+2026-09-19 12:54:35
+                [http-nio-8080-exec-8]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-19 12:54:35
+                [http-nio-8080-exec-8]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Token has expired
+2026-09-19 12:54:35
+                [http-nio-8080-exec-8]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Token has expired]
+2026-09-19 12:54:52
+                [http-nio-8080-exec-9]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-19 12:54:52
+                [http-nio-8080-exec-9]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Token has expired
+2026-09-19 12:54:52
+                [http-nio-8080-exec-9]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Token has expired]
+2026-09-19 12:55:18
+                [http-nio-8080-exec-10]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-19 12:55:18
+                [http-nio-8080-exec-10]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Token has expired
+2026-09-19 12:55:18
+                [http-nio-8080-exec-10]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Token has expired]
+2026-09-19 12:58:27
+                [http-nio-8080-exec-10]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 12:58:27
+                [http-nio-8080-exec-10]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful
+2026-09-19 12:58:42
+                [http-nio-8080-exec-1]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-19 12:58:42
+                [http-nio-8080-exec-1]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Authorization token is required
+2026-09-19 12:58:42
+                [http-nio-8080-exec-1]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Authorization token is required]
+2026-09-19 13:12:44
+                [http-nio-8080-exec-7]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 13:12:44
+                [http-nio-8080-exec-7]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful
+2026-09-19 13:16:36
+                [http-nio-8080-exec-10]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-19 13:16:36
+                [http-nio-8080-exec-10]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Token has expired
+2026-09-19 13:16:36
+                [http-nio-8080-exec-10]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Token has expired]
+2026-09-19 13:17:08
+                [http-nio-8080-exec-1]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-19 13:17:08
+                [http-nio-8080-exec-1]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Token has expired
+2026-09-19 13:17:08
+                [http-nio-8080-exec-1]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Token has expired]
+2026-09-19 13:17:25
+                [http-nio-8080-exec-6]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 13:17:25
+                [http-nio-8080-exec-6]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful
+2026-09-19 13:17:49
+                [http-nio-8080-exec-7]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-19 13:17:49
+                [http-nio-8080-exec-7]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication successful
+2026-09-19 13:20:35
+                [http-nio-8080-exec-10]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Refresh token request received
+2026-09-19 13:20:35
+                [http-nio-8080-exec-10]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Refresh token is inactive or revoked
+2026-09-19 13:20:35
+                [http-nio-8080-exec-10]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Refresh token is inactive or revoked]
+2026-09-19 13:26:20
+                [http-nio-8080-exec-1]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 13:26:20
+                [http-nio-8080-exec-1]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful
+2026-09-19 13:26:50
+                [http-nio-8080-exec-2]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Refresh token request received
+2026-09-19 13:26:50
+                [http-nio-8080-exec-2]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Access token refreshed successfully
+2026-09-19 13:36:39
+                [http-nio-8080-exec-9]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 13:36:39
+                [http-nio-8080-exec-9]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful
+2026-09-19 13:42:25
+                [http-nio-8080-exec-5]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 13:42:25
+                [http-nio-8080-exec-5]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful
+2026-09-19 14:50:37
+                [http-nio-8080-exec-3]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 14:50:37
+                [http-nio-8080-exec-3]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful
+2026-09-19 14:50:56
+                [http-nio-8080-exec-4]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-19 14:50:56
+                [http-nio-8080-exec-4]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication successful
+2026-09-19 14:54:42
+                [http-nio-8080-exec-7]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-19 14:54:42
+                [http-nio-8080-exec-7]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Token has expired
+2026-09-19 14:54:42
+                [http-nio-8080-exec-7]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Token has expired]
+2026-09-19 14:55:33
+                [http-nio-8080-exec-8]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Refresh token request received
+2026-09-19 14:55:33
+                [http-nio-8080-exec-8]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Refresh token is inactive or revoked
+2026-09-19 14:55:33
+                [http-nio-8080-exec-8]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Refresh token is inactive or revoked]
+2026-09-19 15:04:25
+                [http-nio-8080-exec-10]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-19 15:04:25
+                [http-nio-8080-exec-10]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Authorization token is required
+2026-09-19 15:04:25
+                [http-nio-8080-exec-10]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Authorization token is required]
+2026-09-19 15:05:57
+                [http-nio-8080-exec-1]
+                ERROR
+                c.h.exception.GlobalExceptionHandler
+                - Unexpected application error
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:260)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:432)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:376)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:116)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:544)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1157)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:951)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$2(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:376)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-09-19 15:05:57
+                [http-nio-8080-exec-1]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-09-19 15:06:18
+                [http-nio-8080-exec-2]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login request received
+2026-09-19 15:06:18
+                [http-nio-8080-exec-2]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Login successful
+2026-09-19 15:12:00
+                [http-nio-8080-exec-4]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-19 15:12:00
+                [http-nio-8080-exec-4]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Authorization token is required
+2026-09-19 15:12:00
+                [http-nio-8080-exec-4]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Authorization token is required]
+2026-09-19 15:12:18
+                [http-nio-8080-exec-6]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Authentication validation request received
+2026-09-19 15:12:18
+                [http-nio-8080-exec-6]
+                WARN 
+                c.h.exception.GlobalExceptionHandler
+                - Authentication error: Authorization token is required
+2026-09-19 15:12:18
+                [http-nio-8080-exec-6]
+                WARN 
+                o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver
+                - Resolved [com.hdfc.exception.AuthException: Authorization token is required]
+2026-09-19 15:15:51
+                [http-nio-8080-exec-5]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Refresh token request received
+2026-09-19 15:15:52
+                [http-nio-8080-exec-5]
+                INFO 
+                com.hdfc.controller.AuthController
+                - Access token refreshed successfully
