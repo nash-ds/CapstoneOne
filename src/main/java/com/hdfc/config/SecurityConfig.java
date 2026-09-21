@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -23,7 +24,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             // 1. Enable CORS with default/custom source configuration
-            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+            .cors(Customizer.withDefaults())
             // 2. Disable CSRF for REST APIs
             .csrf(AbstractHttpConfigurer::disable)
             
@@ -45,34 +46,6 @@ public class SecurityConfig {
             );
 
         return http.build();
-    }
-
-@Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-
-        // Add your frontend port(s) here (e.g. React/Vite/Angular)
-        configuration.setAllowedOrigins(List.of(
-            "http://localhost:3000", 
-            "http://localhost:5173", 
-            "http://localhost:4200"
-        ));
-
-        // Allowed HTTP methods
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
-
-        // Allowed request headers
-        configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept", "X-Requested-With"));
-
-        // Expose Authorization header so frontend can read JWT tokens from responses
-        configuration.setExposedHeaders(List.of("Authorization"));
-
-        // Allow credentials (cookies / Auth headers)
-        configuration.setAllowCredentials(true);
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
     }
 
     @Bean
