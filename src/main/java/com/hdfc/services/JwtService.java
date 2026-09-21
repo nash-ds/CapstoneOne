@@ -19,10 +19,10 @@ public class JwtService {
     private final SecretKey secretKey;
 
     // 15 minutes for access token
-    private static final long ACCESS_TOKEN_EXPIRATION = 1000 * 60 * 15;
+    private static final long ACCESS_TOKEN_EXPIRATION = 1000 * 60 * 5;
 
     // 7 days for refresh token
-    private static final long REFRESH_TOKEN_EXPIRATION = 1000L * 60 * 60 * 24 * 7;
+    private static final long REFRESH_TOKEN_EXPIRATION = 1000L * 60 * 20;
 
     public JwtService(){
         this.secretKey = Jwts.SIG.HS256.key().build();

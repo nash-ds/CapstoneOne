@@ -7,6 +7,7 @@ import com.hdfc.exception.UserNotFoundException;
 import com.hdfc.model.LoginRequest;
 import com.hdfc.model.User;
 import com.hdfc.model.UserResponseDto;
+import com.hdfc.model.UserToken;
 import com.hdfc.repository.TokenRepository;
 import com.hdfc.repository.UserRepository;
 
@@ -122,7 +123,7 @@ public class UserService {
         String email = jwtService.getSubject(token);
         if (email == null || !isTokenActive(email, token)) {
             log.warn("Token validation failed: token not found in in-memory storage for email={}", email);
-            throw new UnauthorizedException("Token is invalid or not present in in-memory storage");
+            throw new UnauthorizedException("Token is not present in in-memory storage");
         }
 
         log.debug("Token validated successfully for email: {}", email);
@@ -135,10 +136,10 @@ public class UserService {
     }
 
     public Map<String, String> refreshAccessToken(String authHeader) {
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            log.warn("Refresh failed: missing or malformed Authorization header");
-            throw new UnauthorizedException("Missing or invalid Authorization header");
-        }
+    if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+        log.warn("Refresh failed: missing or malformed Authorization header");
+        throw new UnauthorizedException("Missing or invalid Authorization header");
+    }
 
     String refreshToken = authHeader.substring(7).trim();
 
@@ -162,18 +163,18 @@ public class UserService {
             log.warn("Refresh rejected: Current access token for email {} is still active", userToken.getUserEmail());
             throw new UnauthorizedException("Access token is still active. Refresh not permitted yet.");
         }
-        }
+    }
 
     User user = findByEmail(userToken.getUserEmail());
-        String newAccessToken = jwtService.generateToken(user);
-        registerToken(user.getEmail(), newAccessToken);
+    String newAccessToken = jwtService.generateToken(user);
+    registerToken(user.getEmail(), newAccessToken);
 
     log.info("Access token refreshed successfully for email: {}", user.getEmail());
 
-        Map<String, String> body = new HashMap<>();
-        body.put("token", newAccessToken);
-        return body;
-    }
+    Map<String, String> body = new HashMap<>();
+    body.put("token", newAccessToken);
+    return body;
+}
 
     public void logout(String authHeader) {
         String email = validateAndExtractEmail(authHeader);
@@ -202,14 +203,17 @@ public class UserService {
 
     public List<UserResponseDto> getAllUsers() { 
         List<User> users = userRepository.findAll();
-        log.debug("Fetched {} users from database", users.size());
-        return users.stream()
-                .map(user -> new UserResponseDto(
-                        user.getUserId(),
-                        user.getEmail(),
-                        user.getRoles()
-                ))
-                .collect(Collectors.toList());
+        return users.stream().map(u -> {
+            boolean active = tokenRepository.isUserActive(u.getEmail());
+            String status = active ? "ACTIVE" : "INACTIVE";
+
+            return new UserResponseDto(
+                u.getUserId(),
+                u.getEmail(),
+                u.getRoles(),
+                status
+            );
+        }).toList();
     }
 
     public void save(User user){ userRepository.save(user); }
