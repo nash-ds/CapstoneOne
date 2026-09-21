@@ -3,23 +3,25 @@ spring:
     name: CapstoneOne
 
   datasource:
-    url : jdbc:postgresql://localhost:5432/flywaydb
-    username : NASHD
-    password : password
+    url: jdbc:postgresql://localhost:5432/flywaydb
+    username: NASHD
+    password: password
 
     hikari:
       connection-timeout: 10000
       validation-timeout: 5000
 
-
   jpa:
     hibernate:
-      ddl-auto : update
+      ddl-auto: update
 
+logging:
+  file:
+    name: logs/capstone-one.log
 
 resilience4j:
   ratelimiter:
-    rate-limiter-aspect-order: 2  
+    rate-limiter-aspect-order: 2
 
   circuitbreaker:
     circuit-breaker-aspect-order: 1
