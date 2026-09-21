@@ -2,6 +2,7 @@ package com.hdfc.controller;
 
 import com.hdfc.model.LoginRequest;
 import com.hdfc.model.User;
+import com.hdfc.model.UserResponseDto;
 import com.hdfc.services.JwtService;
 import com.hdfc.services.UserRateLimiter;
 import com.hdfc.services.UserService;
@@ -176,19 +177,19 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Logout Failed");
     }
 
-    @GetMapping("/user")
-    @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<?> getUser(@RequestHeader(value = "Authorization") String authHeader) {
-        if (authHeader != null && authHeader.startsWith("Bearer ")) {
-            String token = authHeader.substring(7);
-            String email = jwtService.getSubject(token);
-            if (jwtService.isValid(token) && userService.isTokenActive(email,token)){
-                User user = userService.findByEmail(email);
-                return ResponseEntity.ok(user);
-            }
-        }
-        return ResponseEntity.notFound().build();
-    }
+    // @GetMapping("/user")
+    // @SecurityRequirement(name = "bearerAuth")
+    // public ResponseEntity<?> getUser(@RequestHeader(value = "Authorization") String authHeader) {
+    //     if (authHeader != null && authHeader.startsWith("Bearer ")) {
+    //         String token = authHeader.substring(7);
+    //         String email = jwtService.getSubject(token);
+    //         if (jwtService.isValid(token) && userService.isTokenActive(email,token)){
+    //             User user = userService.findByEmail(email);
+    //             return ResponseEntity.ok(user);
+    //         }
+    //     }
+    //     return ResponseEntity.notFound().build();
+    // }
 
     @GetMapping("/admin")
     @SecurityRequirement (name = "bearerAuth")
@@ -204,7 +205,7 @@ public class AuthController {
             ApiResponse response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(),"Not authorized to view all users");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
         }
-        List<User> users = userService.getAllUsers();
+        List<UserResponseDto> users = userService.getAllUsers();
         ApiResponse response = ApiResponse.success(HttpStatus.OK.value(),"Users fetched successfully",users);
         return ResponseEntity.ok(response);
     }

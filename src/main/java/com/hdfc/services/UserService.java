@@ -2,10 +2,12 @@ package com.hdfc.services;
 
 import com.hdfc.model.LoginRequest;
 import com.hdfc.model.User;
+import com.hdfc.model.UserResponseDto;
 import com.hdfc.repository.TokenRepository;
 import com.hdfc.repository.UserRepository;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -69,7 +71,17 @@ public class UserService {
         
     
 
-    public List<User> getAllUsers() { return userRepository.findAll(); }
+    public List<UserResponseDto> getAllUsers() { 
+        List<User> users = userRepository.findAll();
+
+        return users.stream()
+                .map(user -> new UserResponseDto(
+                        user.getUserId(),
+                        user.getEmail(),
+                        user.getRoles()
+                ))
+                .collect(Collectors.toList());
+    }
     public void save(User user){ userRepository.save(user); }
     public void registerToken(String email, String token) { tokenRepository.registerToken(email , token); }
     public void invalidateToken(String email) { tokenRepository.invalidateToken(email); }
