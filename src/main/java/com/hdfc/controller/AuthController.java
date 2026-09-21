@@ -3,6 +3,7 @@ package com.hdfc.controller;
 import com.hdfc.model.LoginRequest;
 import com.hdfc.model.User;
 import com.hdfc.services.JwtService;
+import com.hdfc.services.UserRateLimiter;
 import com.hdfc.services.UserService;
 import com.hdfc.utility.ApiResponse;
 
@@ -31,38 +32,60 @@ public class AuthController {
 
     private final JwtService jwtService;
     private final UserService userService;
-    // private final ResilientLoginService resilientLoginService;
+     private final UserRateLimiter userRateLimiter;
 
 
-    AuthController(JwtService jwtService, UserService userService){
+    AuthController(JwtService jwtService, UserService userService, UserRateLimiter userRateLimiter){
         this.jwtService = jwtService;
         this.userService = userService;
-        // this.resilientLoginService = resilientLoginService;
+        this.userRateLimiter = userRateLimiter;
     }
 
-@PostMapping("/login")
-    // Explicitly set aspect order so CircuitBreaker runs BEFORE RateLimiter
+// @PostMapping("/login")
+//     @CircuitBreaker(name = "dbBreaker", fallbackMethod = "dbFallback")
+//     @RateLimiter(name = "authRateLimiter", fallbackMethod = "findByEmailFallbackRL")
+//     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
+//         System.out.println("entered func");
+//         User user = userService.findByEmail(request.getEmail());
+
+//         if (user != null && user.getPassword().equals(request.getPassword())) {
+//             String token = jwtService.generateToken(user);
+//             userService.registerToken(user.getEmail(), token);
+//             String refreshToken = jwtService.generateRefreshToken(user);
+//             userService.registerRefreshToken(user.getEmail(), refreshToken);
+//             Map<String, String> body = new HashMap<>();
+//             body.put("token", token);
+//             body.put("refreshToken", refreshToken);
+//             ApiResponse<Map<String, String>> response = ApiResponse.success(HttpStatus.OK.value(), "Login Successful", body);
+//             return ResponseEntity.ok(response);
+//         }
+//         ApiResponse<Map<String, String>> response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(), "Login Failed");
+//         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+//     }
     @CircuitBreaker(name = "dbBreaker", fallbackMethod = "dbFallback")
-    @RateLimiter(name = "authRateLimiter", fallbackMethod = "findByEmailFallbackRL")
+    @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
-        System.out.println("entered func");
+        return userRateLimiter.hitPerUser( request.getEmail(), () -> performLogin(request));
+    }
+
+    private ResponseEntity<?> performLogin(LoginRequest request) {
+
         User user = userService.findByEmail(request.getEmail());
 
         if (user != null && user.getPassword().equals(request.getPassword())) {
             String token = jwtService.generateToken(user);
-            userService.registerToken(user.getEmail(), token);
+            userService.registerToken(user.getEmail(),token);
             String refreshToken = jwtService.generateRefreshToken(user);
-            userService.registerRefreshToken(user.getEmail(), refreshToken);
+            userService.registerRefreshToken(user.getEmail(),refreshToken);
             Map<String, String> body = new HashMap<>();
             body.put("token", token);
             body.put("refreshToken", refreshToken);
-            ApiResponse<Map<String, String>> response = ApiResponse.success(HttpStatus.OK.value(), "Login Successful", body);
+            ApiResponse<Map<String, String>> response = ApiResponse.success( HttpStatus.OK.value(), "Login Successful", body);
             return ResponseEntity.ok(response);
         }
-        ApiResponse<Map<String, String>> response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(), "Login Failed");
+        ApiResponse<Map<String, String>> response = ApiResponse.error(HttpStatus.UNAUTHORIZED.value(),"Login Failed");
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
     }
-
     // Rate Limiter Fallback (429)
     public ResponseEntity<?> findByEmailFallbackRL(LoginRequest request, RequestNotPermitted throwable) {
         ApiResponse<String> response = ApiResponse.error(
