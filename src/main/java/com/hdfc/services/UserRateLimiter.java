@@ -5,6 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Supplier;
 
 import io.github.resilience4j.ratelimiter.RequestNotPermitted;
+import com.hdfc.utility.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,7 @@ public ResponseEntity<?> hitPerUser( String username, Supplier<ResponseEntity<?>
         return RateLimiter.decorateSupplier(rateLimiter, supplier).get();
     } catch (RequestNotPermitted ex) {
 
-        return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).body("Too many login attempts. Please try again later.");
+        return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).body(ApiResponse.error(HttpStatus.TOO_MANY_REQUESTS.value(), "Too many login attempts. Please try again later."));
     }
 }
 }
