@@ -1,18 +1,11 @@
 package com.hdfc.services;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hdfc.model.LoginRequest;
 import com.hdfc.model.User;
 import com.hdfc.repository.TokenRepository;
 import com.hdfc.repository.UserRepository;
 
-import jakarta.annotation.PostConstruct;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.stereotype.Service;
 

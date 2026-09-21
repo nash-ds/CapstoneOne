@@ -16,18 +16,20 @@ spring:
 
 resilience4j:
   ratelimiter:
-    instances:
-      loginRateLimiter:
-        limitForPeriod: 3
-        limitRefreshPeriod: 10s
-        timeoutDuration: 0s
+    rate-limiter-aspect-order: 2  
 
   circuitbreaker:
+    circuit-breaker-aspect-order: 1
     instances:
-      externalLoginService:
+      dbBreaker:
         slidingWindowType: COUNT_BASED
-        slidingWindowSize: 10
+        slidingWindowSize: 5
         minimumNumberOfCalls: 5
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
         permittedNumberOfCallsInHalfOpenState: 2
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        recordExceptions:
+          - org.springframework.dao.DataAccessException
+          - org.springframework.transaction.CannotCreateTransactionException
+          - java.sql.SQLException
