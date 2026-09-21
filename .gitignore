@@ -1,6 +1,12 @@
 HELP.md
+
+# Maven
 target/
 .mvn/wrapper/maven-wrapper.jar
+
+# Spring Boot application logs
+logs/
+
 !**/src/main/**/target/
 !**/src/test/**/target/
 
