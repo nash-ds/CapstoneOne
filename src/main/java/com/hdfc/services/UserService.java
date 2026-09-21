@@ -140,18 +140,35 @@ public class UserService {
             throw new UnauthorizedException("Missing or invalid Authorization header");
         }
 
-        String refreshToken = authHeader.substring(7);
-        String email = jwtService.getSubject(refreshToken);
-        if (email == null || !isRefreshTokenActive(email, refreshToken)) {
-            log.warn("Refresh failed: refresh token not in in-memory storage for email={}", email);
-            throw new UnauthorizedException("Refresh token is invalid or not present in in-memory storage");
+    String refreshToken = authHeader.substring(7).trim();
+
+    UserToken userToken = tokenRepository.findByRefreshToken(refreshToken)
+            .orElseThrow(() -> {
+                log.warn("Refresh failed: refresh token not found in database");
+                return new UnauthorizedException("Invalid refresh token");
+            });
+
+    String refreshStatus = jwtService.isValidDetailed(refreshToken);
+    if (!"VALID".equals(refreshStatus)) {
+        log.warn("Refresh failed: refresh token status is {}", refreshStatus);
+        throw new UnauthorizedException("Refresh token is expired or invalid");
+    }
+
+    String currentAccessToken = userToken.getAccessToken();
+    if (currentAccessToken != null) {
+        String accessTokenStatus = jwtService.isValidDetailed(currentAccessToken);
+        
+        if ("VALID".equals(accessTokenStatus)) {
+            log.warn("Refresh rejected: Current access token for email {} is still active", userToken.getUserEmail());
+            throw new UnauthorizedException("Access token is still active. Refresh not permitted yet.");
+        }
         }
 
-        User user = findByEmail(email);
+    User user = findByEmail(userToken.getUserEmail());
         String newAccessToken = jwtService.generateToken(user);
         registerToken(user.getEmail(), newAccessToken);
 
-        log.info("Access token refreshed successfully for email: {}", email);
+    log.info("Access token refreshed successfully for email: {}", user.getEmail());
 
         Map<String, String> body = new HashMap<>();
         body.put("token", newAccessToken);
