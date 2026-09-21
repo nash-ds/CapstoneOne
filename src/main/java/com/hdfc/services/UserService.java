@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service 
@@ -25,11 +26,13 @@ public class UserService {
     private final UserRepository userRepository;
     private final TokenRepository tokenRepository;
     private final JwtService jwtService;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository, TokenRepository tokenRepository, JwtService jwtService){
+    public UserService(UserRepository userRepository, TokenRepository tokenRepository, JwtService jwtService, PasswordEncoder passwordEncoder){
         this.userRepository = userRepository;
         this.tokenRepository = tokenRepository;
         this.jwtService = jwtService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public User findByEmail(String email) {
@@ -50,7 +53,7 @@ public class UserService {
 
         User user = findByEmail(request.getEmail());
 
-        if (!user.getPassword().equals(request.getPassword())) {
+        if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             log.warn("Incorrect password for email: {}", request.getEmail());
             throw new InvalidCredentialsException("Invalid password");
         }
@@ -77,7 +80,7 @@ public class UserService {
 
         User user = new User();
         user.setEmail(loginRequest.getEmail());
-        user.setPassword(loginRequest.getPassword());
+        user.setPassword(passwordEncoder.encode(loginRequest.getPassword()));
         user.setRoles("USER");
         userRepository.save(user);
 
