@@ -1,5 +1,9 @@
 package com.hdfc.controller;
 
+import com.hdfc.exception.InvalidCredentialsException;
+import com.hdfc.exception.UnauthorizedException;
+import com.hdfc.exception.UserAlreadyExistsException;
+import com.hdfc.exception.UserNotFoundException;
 import com.hdfc.model.LoginRequest;
 import com.hdfc.model.UserResponseDto;
 import com.hdfc.services.JwtService;
@@ -7,6 +11,7 @@ import com.hdfc.services.UserRateLimiter;
 import com.hdfc.services.UserService;
 import com.hdfc.utility.ApiResponse;
 
+import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.RequestNotPermitted;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -52,7 +57,7 @@ public class AuthController {
     }
 
     // Circuit Breaker Fallback (503)
-    public ResponseEntity<?> dbFallback(LoginRequest request, Throwable t) {
+    public ResponseEntity<?> dbFallback(LoginRequest request, CallNotPermittedException t) throws Throwable {
         System.out.println(">>> CIRCUIT BREAKER TRIGGERED! Error: " + t.getMessage());
         ApiResponse<String> response = ApiResponse.error(
             HttpStatus.SERVICE_UNAVAILABLE.value(), 

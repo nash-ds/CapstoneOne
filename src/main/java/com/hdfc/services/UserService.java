@@ -37,6 +37,9 @@ public class UserService {
     }
 
     public Map<String, String> performLogin(LoginRequest request) {
+        if(request.getEmail().isEmpty()){
+            throw new UserNotFoundException("Email is missing");
+        }
         User user = findByEmail(request.getEmail());
 
         if (!user.getPassword().equals(request.getPassword())) {
@@ -76,17 +79,55 @@ public class UserService {
         return body;
     }
 
-    public String validateAuth(String authHeader) {
+    public String validateAndExtractEmail(String authHeader) {
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             throw new UnauthorizedException("Missing or invalid Authorization header");
         }
 
-        String token = authHeader.substring(7);
-        String email = jwtService.getSubject(token);
-        if (!isTokenActive(email, token) || !jwtService.isValid(token)) {
-            throw new UnauthorizedException(jwtService.isValidDetailed(token));
+        String token = authHeader.substring(7).trim();
+        if (token.isEmpty()) {
+            throw new UnauthorizedException("Token is empty");
         }
-        return jwtService.isValidDetailed(token);
+
+        String status = jwtService.isValidDetailed(token);
+        if ("EXPIRED".equals(status)) {
+            throw new UnauthorizedException("Token has expired");
+        }
+        if (!"VALID".equals(status)) {
+            throw new UnauthorizedException("Invalid token");
+        }
+
+        String email = jwtService.getSubject(token);
+        if (email == null || !isTokenActive(email, token)) {
+            throw new UnauthorizedException("Token is invalid or not present in in-memory storage");
+        }
+
+        return email;
+    }
+
+    public String validateAuth(String authHeader) {
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            throw new UnauthorizedException("INVALID");
+        }
+
+        String token = authHeader.substring(7).trim();
+        if (token.isEmpty()) {
+            throw new UnauthorizedException("INVALID");
+        }
+
+        // 1. Firstly call isValidDetailed
+        String detailedStatus = jwtService.isValidDetailed(token);
+        if (!"VALID".equals(detailedStatus)) {
+            throw new UnauthorizedException("INVALID");
+        }
+
+        // 2. Then check the token in tokenRepository (in-memory storage)
+        String email = jwtService.getSubject(token);
+        if (email == null || !isTokenActive(email, token)) {
+            throw new UnauthorizedException("INVALID");
+        }
+
+        return "VALID";
     }
 
     public Map<String, String> refreshAccessToken(String authHeader) {
@@ -96,9 +137,8 @@ public class UserService {
 
         String refreshToken = authHeader.substring(7);
         String email = jwtService.getSubject(refreshToken);
-
-        if (!jwtService.isValid(refreshToken) || !isRefreshTokenActive(email, refreshToken)) {
-            throw new UnauthorizedException("Invalid or expired refresh token");
+        if (email == null || !isRefreshTokenActive(email, refreshToken)) {
+            throw new UnauthorizedException("Refresh token is invalid or not present in in-memory storage");
         }
 
         User user = findByEmail(email);
@@ -111,23 +151,13 @@ public class UserService {
     }
 
     public void logout(String authHeader) {
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            throw new UnauthorizedException("Missing or invalid Authorization header");
-        }
-        String token = authHeader.substring(7);
-        String email = jwtService.getSubject(token);
-        if (email != null) {
-            invalidateToken(email);
-            invalidateRefreshToken(email);
-        }
+        String email = validateAndExtractEmail(authHeader);
+        invalidateToken(email);
+        invalidateRefreshToken(email);
     }
 
     public List<UserResponseDto> getAllUsersForAdmin(String authHeader) {
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            throw new UnauthorizedException("Missing or invalid Authorization header");
-        }
-        String token = authHeader.substring(7);
-        String email = jwtService.getSubject(token);
+        String email = validateAndExtractEmail(authHeader);
         User user = findByEmail(email);
         if (!isAdmin(user)) {
             throw new UnauthorizedException("Not authorized to view all users");
