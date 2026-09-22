@@ -21,10 +21,10 @@ public class JwtService {
     
     private final SecretKey secretKey;
 
-    // 15 minutes for access token
+    // 5 minutes for access token
     private static final long ACCESS_TOKEN_EXPIRATION = 1000 * 60 * 5;
 
-    // 7 days for refresh token
+    // 20 minutes for refresh token
     private static final long REFRESH_TOKEN_EXPIRATION = 1000L * 60 * 20;
 
     public JwtService(@Value("${JWT_SECRET}") String secret) {

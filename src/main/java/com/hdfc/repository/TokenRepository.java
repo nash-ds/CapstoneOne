@@ -1,9 +1,6 @@
 package com.hdfc.repository;
 
-import java.util.Map;
 import java.util.Optional;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.stereotype.Repository;
 
@@ -26,7 +23,6 @@ public class TokenRepository {
         jpaRepository.save(userToken);
     }
 
-    // Clear Access Token
     public void invalidateToken(String email) {
         jpaRepository.findByUserEmail(email).ifPresent(userToken -> {
             userToken.setAccessToken(null);
@@ -34,7 +30,6 @@ public class TokenRepository {
         });
     }
 
-    // Check if Access Token matches current active token
     public boolean isTokenActive(String email, String token) {
         return jpaRepository.findByUserEmail(email)
                 .map(UserToken::getAccessToken)
@@ -42,7 +37,6 @@ public class TokenRepository {
                 .orElse(false);
     }
 
-    // Upsert Refresh Token
     public void registerRefreshToken(String email, String refreshToken) {
         UserToken userToken = jpaRepository.findByUserEmail(email)
                 .orElseGet(() -> new UserToken(email, null, null));
@@ -51,7 +45,6 @@ public class TokenRepository {
         jpaRepository.save(userToken);
     }
 
-    // Clear Refresh Token
     public void invalidateRefreshToken(String email) {
         jpaRepository.findByUserEmail(email).ifPresent(userToken -> {
             userToken.setRefreshToken(null);
@@ -59,7 +52,6 @@ public class TokenRepository {
         });
     }
 
-    // Check if Refresh Token matches
     public boolean isRefreshTokenActive(String email, String refreshToken) {
         return jpaRepository.findByUserEmail(email)
                 .map(UserToken::getRefreshToken)

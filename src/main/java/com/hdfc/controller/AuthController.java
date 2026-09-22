@@ -1,9 +1,5 @@
 package com.hdfc.controller;
 
-import com.hdfc.exception.InvalidCredentialsException;
-import com.hdfc.exception.UnauthorizedException;
-import com.hdfc.exception.UserAlreadyExistsException;
-import com.hdfc.exception.UserNotFoundException;
 import com.hdfc.model.LoginRequest;
 import com.hdfc.model.UserResponseDto;
 import com.hdfc.services.JwtService;
@@ -13,7 +9,6 @@ import com.hdfc.utility.ApiResponse;
 
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
-import io.github.resilience4j.ratelimiter.RequestNotPermitted;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 import java.util.List;
@@ -47,21 +42,11 @@ public class AuthController {
         });
     }
 
-    // Rate Limiter Fallback (429)
-    public ResponseEntity<?> findByEmailFallbackRL(LoginRequest request, RequestNotPermitted throwable) {
-        ApiResponse<String> response = ApiResponse.error(
-            HttpStatus.TOO_MANY_REQUESTS.value(), 
-            "Too many login attempts. Please try again after 1 minute."
-        );
-        return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).body(response);
-    }
-
     // Circuit Breaker Fallback (503)
     public ResponseEntity<?> dbFallback(LoginRequest request, CallNotPermittedException t) throws Throwable {
-        System.out.println(">>> CIRCUIT BREAKER TRIGGERED! Error: " + t.getMessage());
         ApiResponse<String> response = ApiResponse.error(
             HttpStatus.SERVICE_UNAVAILABLE.value(), 
-            "Database service is currently unavailable. Please try again later."
+            "Service is currently down. Please try again later."
         );
         return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(response);
     }

@@ -12,7 +12,6 @@ import com.hdfc.repository.TokenRepository;
 import com.hdfc.repository.UserRepository;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,19 +27,21 @@ public class UserService {
     private final TokenRepository tokenRepository;
     private final JwtService jwtService;
     private final PasswordEncoder passwordEncoder;
+    private final UserRateLimiter userRateLimiter;
 
-    public UserService(UserRepository userRepository, TokenRepository tokenRepository, JwtService jwtService, PasswordEncoder passwordEncoder){
+    public UserService(UserRepository userRepository, TokenRepository tokenRepository, JwtService jwtService, PasswordEncoder passwordEncoder, UserRateLimiter userRateLimiter){
         this.userRepository = userRepository;
         this.tokenRepository = tokenRepository;
         this.jwtService = jwtService;
         this.passwordEncoder = passwordEncoder;
+        this.userRateLimiter = userRateLimiter;
     }
 
     public User findByEmail(String email) {
         User user = userRepository.findByEmail(email);
         if (user == null) {
             log.warn("User not found for email: {}", email);
-            throw new UserNotFoundException("User not found with email: " + email);
+            throw new UserNotFoundException("Invalid Login Credentials");
         }
         return user;
     }
@@ -49,14 +50,14 @@ public class UserService {
         log.info("Login attempt for email: {}", request.getEmail());
         if (request.getEmail() == null || request.getEmail().isEmpty()) {
             log.warn("Login attempt with missing email");
-            throw new InvalidCredentialsException("Login Failed");
+            throw new InvalidCredentialsException("Invalid Login Credentials");
         }
 
         User user = findByEmail(request.getEmail());
 
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             log.warn("Incorrect password for email: {}", request.getEmail());
-            throw new InvalidCredentialsException("Invalid password");
+            throw new InvalidCredentialsException("Invalid Login Credentials");
         }
 
         String token = jwtService.generateToken(user);
@@ -76,7 +77,7 @@ public class UserService {
         log.info("Registration attempt for email: {}", loginRequest.getEmail());
         if (userRepository.findByEmail(loginRequest.getEmail()) != null) {
             log.warn("Registration failed - email already exists: {}", loginRequest.getEmail());
-            throw new UserAlreadyExistsException("User already registered with email: " + loginRequest.getEmail());
+            throw new UserAlreadyExistsException("Invalid Login Credentials ");
         }
 
         User user = new User();
@@ -123,7 +124,7 @@ public class UserService {
         String email = jwtService.getSubject(token);
         if (email == null || !isTokenActive(email, token)) {
             log.warn("Token validation failed: token not found in in-memory storage for email={}", email);
-            throw new UnauthorizedException("Token is not present in in-memory storage");
+            throw new UnauthorizedException("Token is not present in in-memory");
         }
 
         log.debug("Token validated successfully for email: {}", email);
@@ -204,8 +205,16 @@ public class UserService {
     public List<UserResponseDto> getAllUsers() { 
         List<User> users = userRepository.findAll();
         return users.stream().map(u -> {
+            boolean isLocked = userRateLimiter.isUserLocked(u.getEmail());
             boolean active = tokenRepository.isUserActive(u.getEmail());
-            String status = active ? "ACTIVE" : "INACTIVE";
+            String status;
+            if (isLocked) {
+                status = "LOCKED";
+            } else if (active) {
+                status = "ACTIVE";
+            } else {
+                status = "INACTIVE";
+            }
 
             return new UserResponseDto(
                 u.getUserId(),

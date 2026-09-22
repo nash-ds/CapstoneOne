@@ -1,7 +1,6 @@
 package com.hdfc.services;
 
 import java.time.Duration;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Supplier;
 
 import io.github.resilience4j.ratelimiter.RequestNotPermitted;
@@ -38,4 +37,11 @@ public ResponseEntity<?> hitPerUser( String username, Supplier<ResponseEntity<?>
         return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).body(ApiResponse.error(HttpStatus.TOO_MANY_REQUESTS.value(), "Too many login attempts. Please try again later."));
     }
 }
+
+    public boolean isUserLocked(String username) {
+        RateLimiter rateLimiter = registry.rateLimiter("loginRL_" + username);
+        
+        return rateLimiter.getMetrics().getAvailablePermissions() <= 0;
+    }
+
 }
