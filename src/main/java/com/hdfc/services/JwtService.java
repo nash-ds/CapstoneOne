@@ -1,21 +1,24 @@
 package com.hdfc.services;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.crypto.SecretKey;
 
 import io.jsonwebtoken.ExpiredJwtException;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.hdfc.model.User;
 
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
 
 @Service 
 public class JwtService {
-
+    
     private final SecretKey secretKey;
 
     // 15 minutes for access token
@@ -24,8 +27,8 @@ public class JwtService {
     // 7 days for refresh token
     private static final long REFRESH_TOKEN_EXPIRATION = 1000L * 60 * 20;
 
-    public JwtService(){
-        this.secretKey = Jwts.SIG.HS256.key().build();
+    public JwtService(@Value("${JWT_SECRET}") String secret) {
+        this.secretKey = Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
     }
 
     public String generateToken(User user){
@@ -34,7 +37,7 @@ public class JwtService {
                 .claim("email",user.getEmail())
                 .claim("roles",user.getRoles())
                 .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis()+ 1000*60*5))
+                .expiration(new Date(System.currentTimeMillis()+ ACCESS_TOKEN_EXPIRATION))
                 .signWith(secretKey)
                 .compact();
     }
